@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>大一心理学期末复习包</title>
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#f6f7f9; --card:#fff; --ink:#1c1f26; --ink2:#4a5160; --ink3:#7b8494;
+  --line:#e6e9ef; --accent:#2f6df6; --accent-soft:#eef3ff; --mark:#fff3c4;
+  --radius:14px;
+}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  -webkit-text-size-adjust:100%;}
+header{position:sticky;top:0;z-index:20;background:rgba(246,247,249,.92);backdrop-filter:saturate(1.6) blur(10px);
+  border-bottom:1px solid var(--line);padding:10px 14px 8px}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1 1 0;min-width:150px;border:1px solid var(--line);background:var(--card);border-radius:12px;
+  padding:9px 12px;cursor:pointer;font-size:15px;font-weight:600;color:var(--ink2);text-align:left;
+  display:flex;flex-direction:column;gap:2px;transition:.15s}
+.tab span{font-size:11.5px;font-weight:400;color:var(--ink3);line-height:1.3}
+.tab.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.tab.active span{color:rgba(255,255,255,.85)}
+.bar{display:flex;gap:8px;margin-top:8px}
+.bar input{flex:1;min-width:0;border:1px solid var(--line);background:var(--card);border-radius:10px;
+  padding:8px 12px;font-size:15px;color:var(--ink);outline:none}
+.bar input:focus{border-color:var(--accent)}
+.bar button{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:8px 12px;
+  font-size:14px;color:var(--ink2);cursor:pointer;white-space:nowrap}
+.bar button:hover{border-color:var(--accent);color:var(--accent)}
+main{padding:14px 14px 80px;max-width:900px;margin:0 auto}
+.panel{display:none}
+.panel.active{display:block}
+h1.sub{font-size:21px;margin:4px 0 2px;letter-spacing:.3px}
+h2.part{font-size:15px;margin:22px 0 8px;padding:7px 12px;border-radius:10px;
+  background:var(--accent-soft);color:var(--accent);display:inline-block}
+blockquote{margin:6px 0 14px;padding:9px 14px;border-left:3px solid var(--accent);
+  background:var(--card);border-radius:0 10px 10px 0;color:var(--ink2);font-size:14.5px}
+p{margin:8px 0;color:var(--ink2)}
+ul,ol{margin:8px 0;padding-left:22px;color:var(--ink2)}
+li{margin:5px 0}
+li.lv1{margin-left:14px}
+li.lv2{margin-left:28px;font-size:14.5px;color:var(--ink3)}
+strong{color:var(--ink);font-weight:600}
+hr{border:0;border-top:1px dashed var(--line);margin:18px 0}
+details.sec{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  margin:9px 0;overflow:hidden}
+details.sec>summary{cursor:pointer;padding:13px 16px;font-weight:600;font-size:15.5px;
+  list-style:none;display:flex;align-items:flex-start;gap:8px;line-height:1.55}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary::before{content:"▸";color:var(--accent);transition:.15s;flex:none;margin-top:1px}
+details.sec[open]>summary{border-bottom:1px solid var(--line);background:#fbfcfe}
+details.sec[open]>summary::before{transform:rotate(90deg)}
+.body{padding:8px 16px 16px}
+.body ul, .body ol{color:var(--ink2)}
+.body li.lv1{font-size:15px;color:var(--ink2)}
+.tw{overflow-x:auto;margin:10px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f2f5fb;font-weight:600;color:var(--ink)}
+tbody tr:nth-child(even){background:#fafbfd}
+mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 2px}
+.hit{display:none}
+.empty{color:var(--ink3);text-align:center;padding:40px 0;font-size:14px}
+footer{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);padding:8px 14px;font-size:12.5px;color:var(--ink3);text-align:center}
+code{background:#f0f2f6;border-radius:5px;padding:1px 5px;font-size:13.5px}
+@media(max-width:600px){
+  body{font-size:15.5px}
+  main{padding:12px 10px 70px}
+  .tab{min-width:120px;font-size:14px}
+}
+@media print{
+  header,footer{display:none}
+  body{background:#fff;font-size:11.5pt}
+  .panel{display:block!important;page-break-before:always}
+  details.sec{border:0;border-bottom:1px solid #ddd;border-radius:0;break-inside:avoid}
+  .panel:first-of-type{page-break-before:auto}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="tabs"><button class="tab active" data-t="p0">心理学导论<span>张厚粲、许燕 · 北师大出版社</span></button>
+<button class="tab" data-t="p1">心理咨询的理论与实务<span>江光荣 · 高等教育出版社</span></button></div>
+  <div class="bar">
+    <input id="q" type="search" placeholder="搜索关键词（如：共情 / 遗忘 / 系统脱敏）">
+    <button id="tog">全部展开</button>
+    <button id="prt">打印</button>
+  </div>
+</header>
+<main><section class="panel active" id="p0"><h1 class="sub">心理学导论 · 期末复习包</h1>
+<blockquote>教材：张厚粲、许燕《心理学导论》（北京师范大学出版社，第1/2版通用）</blockquote>
+<blockquote>结构：考点速记（16章） → 名词解释（50条） → 简答/论述预测（30题） → 自测卷2套（含答案要点）</blockquote>
+<h2 class="part">使用说明</h2>
+<ul><li class="lv0">速记段是"踩分点"，按教材章序排，考前3小时只看加粗词。</li><li class="lv0">名词解释按"定义 + 关键词"背，关键词漏一个扣一分。</li><li class="lv0">简答论述先写框架句（定义/分类），再展开3-5点，最后一句评价或意义。</li><li class="lv0">自测卷为预测题，非真题；各校题型不同，侧重练"能不能默出来"。</li></ul>
+<hr>
+<h2 class="part">一、考点速记（按章）</h2>
+<details class="sec"><summary>第1章 绪论：什么是心理学 / 历史发展 / 研究方法</summary><div class="body"><ul><li class="lv0"><strong>心理学定义</strong>：研究心理现象及其发生发展规律的科学。（研究对象＝心理现象）</li><li class="lv0"><strong>心理现象结构</strong>：心理过程（认知过程：感觉知觉记忆思维想象；情绪情感过程；意志过程）＋个性心理（个性倾向性：需要、动机、兴趣、理想、信念、世界观；个性心理特征：能力、气质、性格）＋心理状态（注意等）。</li><li class="lv0"><strong>心理与行为</strong>：行为是心理的外显表现，心理支配行为、行为反映心理，但二者非一一对应。</li><li class="lv0"><strong>心理学的基本任务</strong>：描述、解释、预测、控制（干预）。</li><li class="lv0"><strong>研究方法</strong>：观察法（自然/参与）、调查法（问卷/访谈）、个案法、实验法（实验室/自然实验；自变量-因变量-额外变量）、测验法、相关法。<strong>相关≠因果</strong>——相关研究不能推出因果，是必考陷阱。</li><li class="lv0"><strong>科学心理学诞生</strong>：1879年，冯特在德国莱比锡大学建立第一个心理学实验室。</li><li class="lv0"><strong>主要学派</strong>：</li><li class="lv1">构造主义：冯特、铁钦纳；内省法；研究意识的元素。</li><li class="lv1">机能主义：詹姆士、杜威；研究意识的功能与适应。</li><li class="lv1">行为主义：华生（1913，《行为主义者眼中的心理学》）主张研究可观察行为，S-R；斯金纳操作性条件作用。</li><li class="lv1">格式塔（完形）：韦特海默、苛勒、考夫卡；整体大于部分之和；顿悟学习。</li><li class="lv1">精神分析：弗洛伊德；潜意识、本能、早期经验。</li><li class="lv1">人本主义：马斯洛、罗杰斯；"第三势力"；自我实现、人的潜能。</li><li class="lv1">认知心理学：奈瑟1967《认知心理学》；信息加工取向；与神经科学结合为认知神经科学。</li><li class="lv0"><strong>当代特点</strong>：多研究取向整合、分支学科繁茂（生理心理学、发展心理学、社会心理学、临床与咨询心理学等）。</li></ul></div></details>
+<details class="sec"><summary>第2章 心理的生理基础</summary><div class="body"><ul><li class="lv0"><strong>神经元结构</strong>：胞体、树突（接收）、轴突（传导）、髓鞘、终扣；突触传递（电-化学-电）。</li><li class="lv0"><strong>静息电位 / 动作电位</strong>：阈限、"全或无"法则。</li><li class="lv0"><strong>神经递质</strong>：乙酰胆碱（记忆、肌肉）、多巴胺（运动、奖赏、与精神分裂有关）、5-羟色胺（情绪、睡眠，与抑郁有关）、去甲肾上腺素（唤醒）、GABA（抑制性）、内啡肽（镇痛）。</li><li class="lv0"><strong>神经系统</strong>：中枢（脑＋脊髓）／周围（躯体神经系统＋自主神经系统：交感"战斗或逃跑"／副交感"保存恢复"，颉颃作用）。</li><li class="lv0"><strong>脑结构</strong>：脑干（延髓：生命中枢呼吸心跳；脑桥；中脑；网状结构：维持觉醒与注意）、小脑（平衡与协调运动）、间脑（丘脑：感觉中继站；下丘脑：调节内脏、体温、饥饿渴、内分泌，与情绪和动机密切相关）、大脑（左右半球＋胼胝体；大脑皮层四叶——额叶：运动、计划、语言表达；顶叶：躯体感觉；颞叶：听觉；枕叶：视觉）。</li><li class="lv0"><strong>语言区</strong>：布洛卡区（额叶，语言表达；受损→表达性失语，电报句）；威尔尼克区（颞叶，语言理解；受损→接受性失语，听不懂、说得多但乱）。</li><li class="lv0"><strong>大脑两半球功能一侧化</strong>：左半球语言、逻辑、数学；右半球空间、面孔识别、情绪与音乐。裂脑人研究（斯佩里）——切断胼胝体后信息不能互通。<strong>注意</strong>：左右脑分工是相对的，不是"左理性右感性"的绝对二分，媒体说法多为夸大。</li><li class="lv0"><strong>内分泌系统</strong>：垂体（主腺）、甲状腺、肾上腺（皮质/髓质）、性腺、胰岛。</li><li class="lv0"><strong>脑研究方法</strong>：EEG/ERP（时间分辨率高）、CT、PET、fMRI（空间分辨率高）、MEG；损毁法、电刺激法。</li></ul></div></details>
+<details class="sec"><summary>第3章 意识</summary><div class="body"><ul><li class="lv0"><strong>意识</strong>：个体对内外刺激及自身状态的觉知；是心理活动的最高形式，具有觉知性、能动性、社会历史制约性。</li><li class="lv0"><strong>无意识</strong>：弗洛伊德分潜意识、前意识；认知取向指自动化加工、内隐记忆、盲视等。</li><li class="lv0"><strong>注意</strong>：心理活动对一定对象的<strong>指向性和集中性</strong>。</li><li class="lv1">功能：选择、保持、调节与监督。</li><li class="lv1">种类：无意注意（无目的、不需意志努力）、有意注意（有目的、需意志努力）、有意后注意（有目的但无需多少意志努力）。</li><li class="lv1">品质：广度（范围）、稳定性、分配（"一心二用"）、转移（主动转换对象）。</li><li class="lv1"><strong>易混</strong>：注意分散（分心，被动转向无关对象）≠注意转移（主动转向新目标）。</li><li class="lv0"><strong>睡眠阶段</strong>：非快速眼动睡眠 NREM 1-4期（由浅入深，3-4期为慢波/深睡）＋快速眼动睡眠 REM（伴生动眼、梦境生动）；一夜约4-6个周期，每周期约90分钟；REM 随夜渐长。</li><li class="lv0"><strong>梦的理论</strong>：弗洛伊德《梦的解析》——显梦与隐梦，梦是愿望的伪装满足；激活-整合理论（霍布森，脑干随机神经放电被皮层整合）；认知理论（梦是记忆加工与问题解决）。</li><li class="lv0"><strong>催眠</strong>：高度受暗示、注意集中、自愿配合；催眠易感性个体差异大；理论争议（社会认知角色扮演理论 vs 新解离/分离理论）。</li><li class="lv0"><strong>生物节律</strong>：昼夜节律（视交叉上核）、时差与轮班导致的节律紊乱。</li><li class="lv0"><strong>意识特殊现象</strong>：冥想、出神、药物致意识改变（致幻剂、镇静剂等），暗示与安慰剂效应。</li></ul></div></details>
+<details class="sec"><summary>第4章 感觉与知觉</summary><div class="body"><ul><li class="lv0"><strong>感觉</strong>：人脑对直接作用于感觉器官的客观事物<strong>个别属性</strong>的反映；是认识的起点、一切知识的来源。</li><li class="lv0"><strong>感受性与感觉阈限</strong>：感受性（能力）与阈限（数值）成反比。绝对感受性/绝对阈限；差别感受性/差别阈限（最小可觉差 JND）。</li><li class="lv1"><strong>韦伯定律</strong>：ΔI/I = K（常数）。<strong>费希纳定律</strong>：S = K·lg I。</li><li class="lv0"><strong>感觉规律</strong>：适应（暗适应感受性提高、明适应感受性降低；嗅觉适应"入芝兰之室久而不闻其香"）、对比（同时对比、继时对比）、后像（正后像/负后像）、联觉（一种刺激引起另一种感觉，如红色引起温暖感）、不同感觉的相互影响与补偿（盲人听觉触觉更敏锐）。</li><li class="lv0"><strong>视觉</strong>：适宜刺激为380-760nm电磁波；颜色三特性——色调（波长）、明度（强度）、饱和度（纯度）；色觉理论——三色说（杨-赫尔姆霍兹，三种视锥细胞）＋对立过程说（黑林，红绿/黄蓝/黑白颉颃），两说分别解释感受器与神经节细胞水平，现认为各有其位。</li><li class="lv0"><strong>听觉</strong>：适宜刺激为16/20-20000Hz声波；音高（频率）、响度（振幅）、音色（波形）；音高理论——频率说（耳蜗电话说）与地点说（行波理论，贝克西），低频靠频率、高频靠地点。</li><li class="lv0"><strong>其他感觉</strong>：皮肤觉（触/温/冷/痛）、嗅觉、味觉（酸甜苦咸鲜）、动觉、平衡觉、机体觉（内脏感觉）。</li><li class="lv0"><strong>知觉</strong>：人脑对直接作用于感觉器官的客观事物<strong>整体属性</strong>的反映；是感觉的组织与解释。</li><li class="lv0"><strong>知觉特征</strong>：选择性、整体性、理解性、恒常性。</li><li class="lv0"><strong>知觉组织原则（格式塔）</strong>：接近性、相似性、闭合性、连续性、良好图形（良好连续/简洁性）。</li><li class="lv0"><strong>知觉种类</strong>：空间知觉（形状、大小、深度/距离、方位；深度线索——双眼视差、双眼辐合、线条透视、纹理梯度、遮挡、运动视差、相对大小）、时间知觉、运动知觉。</li><li class="lv0"><strong>运动知觉易混</strong>：真动知觉；似动现象——动景运动（Φ现象/动画片原理）、诱发运动（月亮穿云）、运动后效（看瀑布后看山上行）、自主运动（暗室光点）。</li><li class="lv0"><strong>错觉</strong>：对客观事物歪曲的、不正确的知觉，是<strong>规律性的</strong>、人人共有、很难纠正；不等于幻觉。代表：缪勒-莱耶错觉、庞佐错觉、垂直-水平错觉。</li><li class="lv0"><strong>观察</strong>：有目的、有计划、有思维参与的知觉，是"知觉的高级形式"。</li></ul></div></details>
+<details class="sec"><summary>第5章 学习</summary><div class="body"><ul><li class="lv0"><strong>学习定义</strong>：个体在<strong>经验</strong>基础上引起的<strong>行为或行为潜能</strong>的<strong>相对持久</strong>的变化。三要点：由经验（非成熟、非疲劳、非药物）、变化持久、可为行为或潜能。</li><li class="lv0"><strong>经典性条件作用（巴甫洛夫）</strong>：无条件刺激 UCS→无条件反应 UCR；中性刺激与 UCS 反复配对→条件刺激 CS→条件反应 CR。</li><li class="lv1">规律：习得、消退、自然恢复、泛化（"一朝被蛇咬，十年怕井绳"）、分化（辨别）、高级条件作用。</li><li class="lv1">华生"小阿尔伯特"实验：恐惧情绪可被条件化。</li><li class="lv0"><strong>操作性条件作用（斯金纳）</strong>：行为后果决定行为频率。</li><li class="lv1">强化：正强化（给予愉快刺激，行为↑）、负强化（移除厌恶刺激，行为↑）。<strong>负强化≠惩罚</strong>。</li><li class="lv1">惩罚：正惩罚（给予厌恶刺激）、负惩罚（移除愉快刺激），目的在降低行为；副作用多（情绪副作用、回避、治标）。</li><li class="lv1">消退：停止强化，行为逐渐减少。</li><li class="lv1">强化程序（部分强化比连续强化更抗消退）：固定比率 FR、可变比率 VR（最高效、最抗消退，如赌博）、固定时距 FI、可变时距 VI。</li><li class="lv1">技术：塑造（强化接近目标的连续接近行为）、连锁、代币制、行为契约、普雷马克原理（高频活动强化低频活动）。</li><li class="lv0"><strong>认知与生物因素</strong>：托尔曼潜伏学习、认知地图（ rats 无强化也形成认知地图）；班杜拉观察学习四过程——注意、保持、动作再现、动机（强化分直接、替代、自我）；榜样学习；生物学制约（加西亚厌恶味觉学习——味觉与恶心易联结，说明学习有物种 preparedness）。</li><li class="lv0"><strong>有效学习策略</strong>：复述、精细加工（联想、类比、生成）、组织（提纲、图表、分类）、元认知（计划、监控、调节）；SQ3R（Survey-Question-Read-Recite-Review）；分散复习优于集中复习；过度学习；情境依赖与状态依赖；提取练习（测试效应）。</li></ul></div></details>
+<details class="sec"><summary>第6章 记忆</summary><div class="body"><ul><li class="lv0"><strong>记忆定义</strong>：过去经验在人脑中的反映；基本过程＝<strong>编码—存储—提取</strong>（或识记—保持—再认/回忆）。</li><li class="lv0"><strong>三级记忆模型（阿特金森-谢夫林）</strong>：感觉记忆（图像记忆/声像记忆，容量大，保持&lt;1秒）→短时记忆（保持约20-30秒，容量 <strong>7±2 组块</strong>，靠复述维持）→长时记忆（容量无限，可终身）。</li><li class="lv0"><strong>工作记忆（巴德利）</strong>：中央执行系统＋语音环路＋视觉空间模板＋情景缓冲器。</li><li class="lv0"><strong>长时记忆分类</strong>：陈述性（情景记忆：个人经历；语义记忆：知识概念）／程序性（技能、动作）；亦可分为外显记忆与内隐记忆（启动效应）。</li><li class="lv0"><strong>加工水平说（克雷克）</strong>：加工越深（语义&gt;字形、音形），记忆越好。</li><li class="lv0"><strong>遗忘</strong>：</li><li class="lv1">艾宾浩斯遗忘曲线：<strong>先快后慢，先多后少</strong>；用无意义音节和重学法（节省法）。</li><li class="lv1">原因：衰退说、干扰说（前摄抑制：前对后；倒摄抑制：后对前）、压抑/动机性遗忘（弗洛伊德）、提取失败说（舌尖现象）、同化说（奥苏贝尔）。</li><li class="lv1">系列位置效应：首因效应（开头材料进入长时记忆）＋近因效应（末尾材料尚在短时记忆）。</li><li class="lv0"><strong>再认与回忆</strong>：能回忆的一定能再认，能再认的不一定能回忆；回忆难度高于再认。</li><li class="lv0"><strong>记忆重构（洛夫特斯）</strong>：记忆不是录像回放而是重构；误导信息效应可植入虚假记忆；目击者证词可靠性受提问方式影响——司法心理学经典考点。</li><li class="lv0"><strong>提高记忆</strong>：深加工、组织化、及时复习与分散复习、多通道协同、过度学习（150%）、利用线索与编码特异性、位置法与关键词法、充足睡眠。</li></ul></div></details>
+<details class="sec"><summary>第7章 思维（含问题解决与决策、语言）</summary><div class="body"><ul><li class="lv0"><strong>思维定义</strong>：人脑对客观事物<strong>间接的、概括的</strong>反映，反映事物的本质特征和内在联系。两大特征：间接性、概括性。</li><li class="lv0"><strong>思维种类</strong>：按凭借物——直观动作思维、具体形象思维、抽象逻辑思维；按方向——聚合（辐合）思维、发散思维；按创新性——常规思维、创造性思维。</li><li class="lv0"><strong>思维过程</strong>：分析与综合（基本过程）、比较、抽象与概括、具体化与系统化。</li><li class="lv0"><strong>表象</strong>：事物不在眼前时头脑中出现的形象；特征——直观性、概括性；是感性到理性的中介。</li><li class="lv0"><strong>想象</strong>：对已有表象加工改造形成新形象；种类——无意想象（梦是极端形式）、有意想象（再造想象、创造想象；幻想，积极的幻想＝理想，消极的＝空想）。</li><li class="lv0"><strong>概念</strong>：人脑反映事物本质属性的思维形式；概念形成（假设检验说、原型说、样例说）；人工概念与自然概念。</li><li class="lv0"><strong>推理</strong>：演绎（三段论）、归纳、类比；人会受信念偏差、气氛效应影响。</li><li class="lv0"><strong>问题解决</strong>：过程——发现问题、明确问题、提出假设、检验假设；策略——算法（穷举，慢但保证解）、启发式（手段-目的分析、爬山法、逆向搜索、类比迁移，快但不保证）；影响因素——问题情境、定势（卢钦斯水罐实验）、功能固着（邓克尔蜡烛问题）、动机强度（耶克斯-多德森倒U曲线）、知识经验、原型启发、酝酿效应。</li><li class="lv0"><strong>决策</strong>：期望效用理论（理性模型）；有限理性（西蒙，"满意原则"）；启发式与偏差——代表性启发式（忽略基础比率）、可得性启发式、锚定与调整、框架效应；前景理论（卡尼曼：损失厌恶、确定效应、参照点）；过度自信、沉没成本谬误。</li><li class="lv0"><strong>创造性思维</strong>：四阶段——准备期、酝酿期、豁朗期（顿悟）、验证期；特征——流畅性、变通性（灵活性）、独特性（新颖性）。</li><li class="lv0"><strong>思维与语言</strong>：语言是思维的工具与外壳；<strong>萨丕尔-沃尔夫假说</strong>（语言决定论为强假设、语言相对性为弱假设，强假设普遍不被接受，弱假设有部分证据）。</li></ul></div></details>
+<details class="sec"><summary>第8章 智力</summary><div class="body"><ul><li class="lv0"><strong>智力定义</strong>：争议较大，多数定义为"认识、理解、解决问题与适应环境的能力的综合"。</li><li class="lv0"><strong>理论</strong>：</li><li class="lv1">斯皮尔曼二因素：一般因素 g ＋特殊因素 s。</li><li class="lv1">瑟斯顿群因素：七种基本心理能力（言语理解、数字、空间、知觉速度、记忆、推理、言语流畅）。</li><li class="lv1">吉尔福德三维结构：操作×内容×产物。</li><li class="lv1">卡特尔：流体智力（知觉速度、推理，受生理与遗传影响，成年后渐降）／晶体智力（知识经验，随年龄增长）。</li><li class="lv1">斯滕伯格三元智力：成分、经验、情境；后提出成功智力（分析、创造、实践）。</li><li class="lv1">加德纳多元智力：语言、逻辑数学、音乐、空间、身体动觉、人际、内省、自然观察（＋存在）。</li><li class="lv1">情绪智力（萨洛维与梅耶／戈尔曼）：觉察、运用、理解、管理情绪的能力。</li><li class="lv0"><strong>测量</strong>：</li><li class="lv1">比奈-西蒙量表（1905，首个智力量表）；推孟斯坦福-比奈量表提出<strong>比率智商</strong> IQ＝MA/CA×100。</li><li class="lv1">韦克斯勒量表（WAIS/WISC/WPPSI）：言语量表＋操作量表，<strong>离差智商</strong> IQ＝100＋15Z。</li><li class="lv1">测验四要素：信度、效度、标准化、常模。</li><li class="lv0"><strong>影响因素</strong>：遗传（双生子与收养研究：遗传度随年龄上升）、环境（家庭环境、教育、营养、社会经济地位、文化）、二者交互；弗林效应（半个世纪以来智商均值上升，归因于环境与教育改善）。</li><li class="lv0"><strong>发展趋势</strong>：流体智力在青年期达峰后下降，晶体智力可维持甚至上升至老年。</li><li class="lv0"><strong>差异</strong>：性别差异（总体接近，男性在空间/数学某些任务、女性在言语流畅性与某些记忆任务上平均略有差异，且个体差异远大于组间差异）、文化公平测验的争议。</li><li class="lv0"><strong>智力与创造力的关系</strong>：低智力者难有高创造力，高智力者未必高创造；创造力还需非智力因素（动机、人格、开放经验）。</li></ul></div></details>
+<details class="sec"><summary>第9章 动机与情绪</summary><div class="body"><ul><li class="lv0"><strong>动机</strong>：激发、引导和维持个体活动，并使活动朝向某一目标的内部动力。功能——<strong>激活（始动）功能、指向功能、维持与调节功能</strong>。</li><li class="lv0"><strong>动机种类</strong>：生理性（原发性）／社会性（习得性）；内在动机／外在动机（外在奖励可能削弱内在动机——"过度理由效应"）。</li><li class="lv0"><strong>生理性动机</strong>：饥饿（血糖、胃收缩、下丘脑外侧核为饥饿中枢、腹内侧核为饱食中枢；现代观点：下丘脑非单一中枢，还受脂肪细胞瘦素、文化心理影响）、渴、性、睡眠、母性。</li><li class="lv0"><strong>社会性动机</strong>：成就动机（麦克利兰、阿特金森；力求成功 vs 避免失败）、亲和动机、权力动机；成就目标定向——掌握目标 vs 成绩目标。</li><li class="lv0"><strong>动机理论</strong>：</li><li class="lv1">本能论（麦独孤、弗洛伊德）</li><li class="lv1">驱力降低论（赫尔：需要→驱力→行为→降低驱力）</li><li class="lv1">唤醒理论（最佳唤醒水平；耶克斯-多德森定律：<strong>中等强度动机最有利于复杂任务</strong>，简单任务最佳唤醒更高）</li><li class="lv1">诱因理论</li><li class="lv1">认知理论：期望-价值理论、归因理论（韦纳：内外源×稳定性×可控性三维度；习得性无助与归因风格）、自我效能感（班杜拉：成败经验、替代经验、言语劝说、情绪唤醒四个来源）、自我决定论（德西与瑞安：自主、胜任、关系三种基本需要的满足产生内在动机）</li><li class="lv1"><strong>马斯洛需要层次</strong>：生理→安全→归属与爱→尊重→自我实现（由低到高，低层次相对满足后才出现高层次需要；后补审美需要、求知需要）。</li><li class="lv0"><strong>情绪</strong>：人对客观事物是否符合自身需要而产生的态度体验；三成分——主观体验、生理唤醒、外部表现（表情）。</li><li class="lv0"><strong>情绪功能</strong>：适应功能、动机功能、组织功能、信号（交际）功能。</li><li class="lv0"><strong>分类</strong>：基本情绪（埃克曼：快乐、悲伤、愤怒、恐惧、厌恶、惊讶；跨文化面部表情一致）；情绪状态——心境（微弱持久弥漫）、激情（强烈短暂爆发）、应激（出乎意料的紧张情境下的反应）。</li><li class="lv0"><strong>情绪理论（必考）</strong>：</li><li class="lv1">詹姆斯-兰格理论："因为哭所以悲伤"，生理反应先于情绪体验（外周生理反应决定情绪）。</li><li class="lv1">坎农-巴德理论：丘脑整合，生理唤醒与情绪体验同时产生，互不决定。</li><li class="lv1">沙赫特-辛格两因素理论：情绪＝生理唤醒＋认知标签（沙赫特与辛格肾上腺素实验）；强调认知解释。</li><li class="lv1">拉扎勒斯认知-评价理论：初级评价（是否与我有利害）、次级评价（能否应对）、再评价；评价先于情绪。</li><li class="lv1">扎荣茨：情感优先假说（情感反应可在无认知参与下发生，单纯曝光效应）。</li><li class="lv0"><strong>情绪调节（格罗斯）</strong>：五环节——情境选择、情境修正、注意分配、认知改变、反应调整。<strong>认知重评优于表达抑制</strong>（抑制更易消耗资源、生理反应更强）。</li><li class="lv0"><strong>情绪智力与心理健康</strong>：觉察与表达情绪、共情、压力应对。</li></ul></div></details>
+<details class="sec"><summary>第10章 意志</summary><div class="body"><ul><li class="lv0"><strong>意志</strong>：个体自觉地确定目的，并根据目的支配、调节行动，克服困难，实现预定目的的心理过程。</li><li class="lv0"><strong>特征</strong>：有明确的目的性；与克服困难相联系（这是最核心特征）；以随意动作（有意识、可控制的动作）为基础。</li><li class="lv0"><strong>意志行动过程</strong>：采取决定阶段（动机冲突、目的确定、方法选择、计划制定）→执行决定阶段（更关键，意志力量集中体现）。</li><li class="lv0"><strong>动机冲突四类型</strong>：双趋冲突（鱼与熊掌）、双避冲突（前怕狼后怕虎）、趋避冲突（既想又怕，如想吃甜食怕胖）、多重趋避。</li><li class="lv0"><strong>意志品质</strong>：自觉性（对立面：受暗示性、独断性）；果断性（对立面：优柔寡断、草率决定）；自制性（对立面：任性、怯懦）；坚持性/坚韧性（对立面：顽固、动摇）。</li><li class="lv0"><strong>挫折</strong>：个体在通向目标的道路上遇到障碍不能克服时的情绪状态；产生原因（客观障碍 + 主观能力与期望）；反应——攻击、退缩、固着、倒退（退化）、冷漠、升华与补偿（积极应对）；挫折承受力受生理条件、经历、认知、社会支持影响。</li><li class="lv0"><strong>意志培养</strong>：树立正确目标与世界观、在实践困难中锻炼、从小事做起、自我教育（自我激励、自我监督、自我控制）、榜样与集体影响。</li></ul></div></details>
+<details class="sec"><summary>第11章 人格</summary><div class="body"><ul><li class="lv0"><strong>人格定义</strong>：个体在行为上的内部倾向，表现为跨时间、跨情境稳定的、独特的心理特征模式。特征——独特性（个别性）、稳定性、统合性（整合性，人格分裂为统合性破坏）、功能性（决定命运）。</li><li class="lv0"><strong>人格结构</strong>：</li><li class="lv1"><strong>气质</strong>：表现在心理活动强度、速度、灵活性与指向性等动力特征方面的稳定的先天个性心理特征；无好坏之分，不决定成就高低。巴甫洛夫高级神经活动类型（强度×平衡性×灵活性）↔ 四体液说：胆汁质（强-不平衡，冲动易怒）、多血质（强-平衡-灵活，活泼善交际）、黏液质（强-平衡-不灵活，稳重迟缓）、抑郁质（弱，敏感内向）。</li><li class="lv1"><strong>性格</strong>：人对现实的态度和相应行为方式中稳定的心理特征；结构——态度特征（<strong>核心</strong>）、意志特征、情绪特征、理智特征；有好坏评价。</li><li class="lv1"><strong>自我调控系统</strong>：自我认知→自我体验（自尊）→自我控制。</li><li class="lv1">气质与性格的关系：气质是先天的、无好坏，性格是后天形成的、有社会评价意义；气质影响性格的表现方式与形成速度，性格可在一定程度上掩蔽、改造气质。</li><li class="lv0"><strong>人格理论</strong>：</li><li class="lv1"><strong>特质理论</strong>：奥尔波特（共同特质与个人特质：首要特质、中心特质、次要特质）；卡特尔16PF（表面特质与根源特质）；艾森克 EPQ（内外倾 E、神经质 N、精神质 P 三维度）；<strong>大五人格 OCEAN</strong>——开放性 O、责任心 C、外倾性 E、宜人性 A、神经质 N。</li><li class="lv1"><strong>精神分析</strong>：弗洛伊德——意识层次（意识/前意识/潜意识）、人格结构（本我：快乐原则；自我：现实原则；超我：道德原则）、<strong>防御机制</strong>（压抑、否认、投射、反向形成、合理化、转移/置换、升华、退行、理智化）、心理性欲发展阶段（口唇期、肛门期、性器期含俄狄浦斯情结、潜伏期、生殖期）、 fixation 与 regression。</li><li class="lv1"><strong>新精神分析</strong>：荣格（集体无意识与原型：人格面具、阿尼玛/阿尼姆斯、阴影、自性；内外倾）；阿德勒（自卑感与追求优越、生活风格、出生顺序、社会兴趣）；埃里克森（心理社会发展八阶段）。</li><li class="lv1"><strong>行为主义与社会学习</strong>：斯金纳（人格＝行为习得模式）、班杜拉（<strong>交互决定论</strong>：个体×行为×环境；观察学习；自我效能）。</li><li class="lv1"><strong>人本主义</strong>：马斯洛（需要层次与自我实现者特征）、罗杰斯（自我概念、无条件积极关注、价值条件、机能完善者；自我概念与经验不一致导致焦虑与防御）。</li><li class="lv0"><strong>人格测评</strong>：自陈量表（MMPI 明尼苏达多相人格调查表、16PF、EPQ、NEO-PI）；投射测验（罗夏墨迹测验、主题统觉测验 TAT，基于投射假说，主观性强、信效度争议）；观察法、访谈法、情境测验。</li><li class="lv0"><strong>人格成因</strong>：遗传与生理基础（气质、双生子研究）＋环境（家庭教养方式、父母榜样、同伴、学校、社会文化、重大生活事件）＋自我因素（自我意识与主观能动性）。</li></ul></div></details>
+<details class="sec"><summary>第12章 社会态度与社会行为</summary><div class="body"><ul><li class="lv0"><strong>态度</strong>：个体对特定对象所持有的稳定的、评价性的内在心理倾向；三成分（ABC）——<strong>认知</strong>、<strong>情感（核心）</strong>、<strong>行为倾向</strong>。</li><li class="lv0"><strong>态度功能</strong>：工具性/适应功能、自我防御功能、价值表达功能、认知（理解世界）功能。</li><li class="lv0"><strong>态度与行为</strong>：并非一一对应（拉皮尔1934年"中国人夫妇与旅馆"研究）；一致性受态度强度、可接近性、具体性、情境压力影响；计划行为理论（阿耶兹）：态度＋主观规范＋知觉行为控制 → 行为意图 → 行为。</li><li class="lv0"><strong>态度改变</strong>：霍夫兰德说服模型（说服者—信息—被说服者—情境）；说服者的可信性与吸引力、<strong>睡眠者效应</strong>；信息方面——双面论证与单面论证、恐惧诉求（中等强度恐惧＋明确建议最有效）；被说服者——原有态度强度、卷入度、人格与智力。</li><li class="lv1">精细加工可能性模型 ELM：中心路径（深思、持久）与外周路径（依赖线索、易变）。</li><li class="lv1"><strong>认知失调理论（费斯汀格）</strong>：态度与行为不一致引起失调（不快）→ 改变态度或行为以恢复平衡；经典——1美元与20美元说谎实验；应用——登门槛技术（foot-in-the-door）、留面子技术（door-in-the-face）、低球技术（low-ball）、付出合理化。</li><li class="lv0"><strong>印象形成</strong>：第一印象、首因效应、近因效应、晕轮效应、刻板印象（偏见）、内隐人格理论、宽大效应、负性效应；阿希"中心特质"（热情-冷淡）实验。</li><li class="lv0"><strong>归因</strong>：海德二分（内归因/外归因）；琼斯对应推论；凯利三维归因理论（<strong>区别性、一致性、一贯性</strong>）；韦纳二维度/三维度（内外源、稳定性、可控性）；偏差——<strong>基本归因错误</strong>（高估个人、低估情境）、自利偏差（成功归内、失败归外）、行动者-观察者效应。</li><li class="lv0"><strong>社会影响</strong>：</li><li class="lv1">从众（阿希线段实验）：因真实或想象的群体压力而改变行为或信念；影响因素——群体规模（3-4人达峰）、一致性、群体凝聚力与地位、匿名性降低从众、文化（集体主义更高）、个体特征。</li><li class="lv1">服从（米尔格拉姆电击实验）：权威命令下的伤害性服从；影响因素——权威的合法性与接近性、受害者距离（心理距离）、责任转移、逐步升级（登门槛式）、同伴支持降低服从。实验伦理争议：欺骗与保护被试。</li><li class="lv1">去个体化（匿名性增强，自我约束降低）、社会助长（扎荣茨：他人在场提高简单任务表现）、社会干扰（复杂任务表现下降）、社会惰化（拉塔内，"搭便车"）、群体极化、冒险转移、群体思维（詹尼斯：高凝聚力+封闭决策，症状与防范）。</li></ul></div></details>
+<details class="sec"><summary>第13章 人际交往</summary><div class="body"><ul><li class="lv0"><strong>人际沟通</strong>：要素——信息源、信息、通道、信息接受者、反馈、障碍（噪音）；分类——语言沟通与非语言沟通（目光接触、面部表情、姿态与手势、身体接触、人际距离、副语言/语调）；非语言线索在传达情绪与态度上作用更大。</li><li class="lv0"><strong>人际距离（霍尔）</strong>：亲密距离（0-45cm）、个人距离（45-120cm）、社交距离（1.2-3.6m）、公共距离（&gt;3.6m）。</li><li class="lv0"><strong>人际吸引</strong>：接近性（熟悉效应/单纯曝光效应）、外表吸引力（"美的就是好的"刻板印象）、相似性（态度价值观相似最重要）、互补性、互惠式好感、才能与"出丑效应"、被喜欢与自我表露。</li><li class="lv0"><strong>关系发展</strong>：社会渗透理论（奥特曼与泰勒：由浅入深、由窄到宽的自我表露）；相互依赖理论（奖赏-成本-比较水平）；公平理论；投资模型（满意度＋替代选择＋投资量→承诺）。</li><li class="lv0"><strong>爱情</strong>：斯腾伯格<strong>爱情三元论</strong>——亲密、激情、承诺三要素组合成八种类型（无爱、喜欢、迷恋、空洞爱、浪漫爱、伴侣爱、愚昧爱、完美爱）；李（Lee）爱情六色轮。</li><li class="lv0"><strong>亲社会/助人行为</strong>：拉塔内与达利<strong>旁观者介入五步骤</strong>——注意到事件→解释为紧急→承担个人责任→决定如何帮助→实施帮助；<strong>旁观者效应</strong>（他人在场降低助人，责任分散、情境模糊、评价顾忌是主因）；共情-利他假说（巴特森）；互惠利他；亲社会行为的学习与强化。</li><li class="lv0"><strong>侵犯行为</strong>：本能论（弗洛伊德、洛伦兹）vs 挫折-侵犯假说（多拉德，侵犯总是挫折的结果，挫折常导致侵犯）vs 社会学习论（班杜拉波波娃娃实验，观察学习与强化）；影响因素——生理（睾酮、酒精、低血糖、高温）、去个体化、媒体暴力（脱敏与模仿）、挫折与挑衅、文化（荣誉文化）。</li></ul></div></details>
+<details class="sec"><summary>第14章 毕生发展</summary><div class="body"><ul><li class="lv0"><strong>发展</strong>：个体从受精卵到死亡过程中系统的、连续的变化；成熟与学习的交互；关键期（洛伦兹印刻）与敏感期。</li><li class="lv0"><strong>研究方法</strong>：横断研究（效率高但有<strong>同辈/世代效应</strong>）、纵向研究（看个体变化但耗时长、被试流失）、序列/聚合交叉设计（最优）。</li><li class="lv0"><strong>认知发展——皮亚杰</strong>：图式、同化、顺应、平衡化；四阶段——感知运动期（0-2岁，<strong>客体永久性</strong>）、前运算期（2-7岁，符号功能、<strong>自我中心</strong>、不守恒、泛灵论、单维思考）、具体运算期（7-11岁，守恒、可逆性、去自我中心、需具体经验支持）、形式运算期（11岁以上，假设演绎、抽象逻辑）；贡献与批评（低估幼儿能力、阶段非绝对）。</li><li class="lv0"><strong>维果茨基</strong>：文化历史发展观、内化、<strong>最近发展区（ZPD）</strong>、<strong>支架式教学</strong>、语言与思维的关系（私人言语）。</li><li class="lv0"><strong>道德发展</strong>：皮亚杰（他律道德→自律道德，从后果判断到意图判断）；柯尔伯格三水平六阶段——前习俗（避罚服从、工具性相对主义）、习俗（人际和谐"好孩子"、维护权威与社会秩序）、后习俗（社会契约、普遍伦理原则）；批评与吉利根的<strong>关怀取向</strong>（女性道德发展强调责任与关系）。</li><li class="lv0"><strong>依恋</strong>：鲍尔比（依恋是进化适应行为，内部工作模型）；安斯沃斯<strong>陌生情境法</strong>——安全型、回避型（焦虑-回避）、矛盾型（焦虑-矛盾/抗拒），后加<strong>混乱型</strong>；依恋影响日后人际关系与情绪调节。</li><li class="lv0"><strong>教养方式（鲍姆林德）</strong>：权威型（高要求高回应，最优）、专制型（高要求低回应）、溺爱/放纵型（低要求高回应）、忽视型（低要求低回应）。</li><li class="lv0"><strong>埃里克森心理社会发展八阶段</strong>：信任对不信任（0-1）；自主对羞怯怀疑（1-3）；主动对内疚（3-6）；<strong>勤奋对自卑</strong>（6-12）；<strong>自我同一性对角色混乱</strong>（青少年期）；亲密对孤独（成年早期）；繁衍感对停滞（中年期）；自我完善对绝望（老年期）。</li><li class="lv0"><strong>青少年</strong>：生理成熟（青春期）、自我同一性（马西娅四状态——弥散、早闭、延缓、达成）、亲子冲突与同伴依恋、假想的观众与个人神话（埃尔金德）。</li><li class="lv0"><strong>成年与老年</strong>：中年期（更年期、中年转型）、老年期认知变化（加工速度下降、晶体智力保持）、成功老化、<strong>SOC 模型</strong>（选择-优化-补偿）、活动理论 vs 脱离理论；临终心理（库伯勒-罗斯五阶段：否认、愤怒、讨价还价、抑郁、接受）。</li></ul></div></details>
+<details class="sec"><summary>第15章 心理健康与异常</summary><div class="body"><ul><li class="lv0"><strong>心理健康标准</strong>：心理活动与外部环境协调、心理过程完整协调、人格稳定；常用表述——智力正常、情绪稳定愉快、意志健全、人格完整统一、恰当的自我评价、人际关系和谐、良好的社会适应、心理行为符合年龄特征。世卫组织：身体、心理、社会适应三方面完满。</li><li class="lv0"><strong>心理异常的判别标准</strong>：内省经验标准（主观体验与观察者经验）、统计学标准（偏离常态，但少数不等于异常）、社会适应标准（能否适应生活）、医学/病理标准（有无器质性病变）。（我国常用"四标准"或"三原则"：主客观世界统一性、心理活动内在协调性、人格相对稳定性。）——<strong>括号内三原则以教材表述为准</strong>。</li><li class="lv0"><strong>心理障碍分类（常见）</strong>：</li><li class="lv1">焦虑障碍：广泛性焦虑障碍、惊恐障碍、恐怖症（特定恐怖、社交恐怖、广场恐怖）、强迫症（强迫思维+强迫行为）、创伤后应激障碍 PTSD（创伤再体验、回避、警觉性增高、负性认知改变）。</li><li class="lv1">心境（情感）障碍：抑郁障碍（兴趣减退、情绪低落、精力下降、失眠自杀观念等）、双相情感障碍（抑郁与躁狂交替）。</li><li class="lv1">精神分裂症：<strong>阳性症状</strong>（幻觉、妄想、思维形式障碍、行为紊乱）与<strong>阴性症状</strong>（情感淡漠、意志减退、社交退缩、言语贫乏）；自知力受损。</li><li class="lv1">进食障碍（神经性厌食、神经性贪食）、躯体症状及相关障碍、人格障碍、物质使用与成瘾障碍、神经发育障碍（ADHD、孤独症谱系）。</li><li class="lv1"><strong>神经症（神经症性障碍）vs 精神病性障碍</strong>：前者多有自知力、现实检验能力保存、社会功能相对完好；后者自知力缺失、现实检验能力受损。</li><li class="lv0"><strong>病因</strong>：生物-心理-社会综合模型；素质-压力模型（diathesis-stress）。</li><li class="lv0"><strong>心理咨询与治疗取向概览</strong>：精神分析/心理动力、行为、认知与认知行为、人本主义、家庭与系统、团体咨询；心理健康三级预防（初级预防、二级早发现早干预、三级康复防复发）。</li></ul></div></details>
+<details class="sec"><summary>第16章 压力与挫折应对</summary><div class="body"><ul><li class="lv0"><strong>压力（应激）</strong>：个体面对超出其应对资源的环境要求时产生的身心紧张状态。塞里<strong>一般适应综合征 GAS</strong>：警觉期—抵抗期—衰竭期。</li><li class="lv0"><strong>拉扎勒斯的认知交互作用模型</strong>：初级评价（无关/良性/应激：威胁、挑战、损害）→次级评价（应对资源与选择）→再评价。压力取决于"要求-资源"的评估而非事件本身。</li><li class="lv0"><strong>压力源</strong>：重大生活事件（霍尔姆斯与拉赫社会再适应评定量表 SRRS，生活变化单位 LCU 与疾病风险相关）、日常困扰（小麻烦的累积效应有时大于重大事件）、创伤性事件、慢性压力（贫困、职业倦怠、照护负担）。</li><li class="lv0"><strong>压力反应</strong>：生理——交感-肾上腺髓质系统激活（心率血压上升）、HPA 轴激活（皮质醇）、长期慢性压力损害免疫系统；心理——焦虑、抑郁、易激惹、认知功能下降；行为——失眠、饮食改变、回避、物质滥用。</li><li class="lv0"><strong>A型行为模式</strong>（时间紧迫感、竞争性与敌意）与冠心病风险相关；D型人格（消极情感与社交抑制）与心血管预后相关。</li><li class="lv0"><strong>应对（拉扎勒斯与福克曼）</strong>：<strong>问题聚焦应对</strong>（改变压力源，适用于可控情境）与<strong>情绪聚焦应对</strong>（调节情绪，适用于不可控情境）；应对方式分积极应对与消极应对（回避、否认、幻想、退行、物质滥用）；幽默、升华、求助为成熟型防御/应对。</li><li class="lv0"><strong>社会支持</strong>：种类——情感支持、工具性支持、信息支持、陪伴性支持；作用机制——<strong>缓冲假说</strong>（压力下才显效）与<strong>直接效应假说</strong>（无论有无压力都有益）。</li><li class="lv0"><strong>挫折应对</strong>：调整目标与期望、改善问题解决技能、认知重构、寻求社会支持、放松训练与运动。</li><li class="lv0"><strong>危机与自杀干预</strong>：危险因素（抑郁、既往自杀未遂、具体计划、手段可及性、社会隔离、重大丧失）；预警信号（言语暗示、安排后事、告别、情绪突然好转）；干预要点——直接询问自杀意念（不会诱发自杀）、倾听不评判、不承诺保密、保证安全（移除危险工具）、转介专业机构与陪伴、联系家人与社会支持。</li></ul>
+<hr></div></details>
+<h2 class="part">二、名词解释（高频50条）</h2>
+<ol><li><strong>心理学</strong>——研究心理现象及其发生发展规律的科学。</li><li><strong>心理过程</strong>——认知过程、情绪情感过程、意志过程的总称。</li><li><strong>观察法</strong>——在自然条件下有目的、有计划地观察被试行为并记录，以分析心理规律的方法。</li><li><strong>实验法</strong>——人为控制或创设条件、操纵自变量、观测因变量以探求因果关系的方法。</li><li><strong>相关法</strong>——考察两个变量共变关系的方法，不能确立因果关系。</li><li><strong>神经元</strong>——神经系统的基本结构与功能单位，由胞体、树突、轴突构成，通过突触传递信息。</li><li><strong>突触</strong>——神经元之间传递信息的结构连接部位，通过神经递质完成化学传递。</li><li><strong>自主神经系统</strong>——支配内脏与腺体的周围神经系统，含交感与副交感，二者颉颃协调。</li><li><strong>网状结构</strong>——脑干中央的神经结构，上行激活系统维持大脑觉醒与注意。</li><li><strong>胼胝体</strong>——连接大脑左右半球的白质纤维束，实现两半球信息交换。</li><li><strong>意识</strong>——个体对内外刺激与自身状态的觉知，是心理活动的最高水平。</li><li><strong>注意</strong>——心理活动对一定对象的指向性与集中性。</li><li><strong>无意注意</strong>——无预定目的、不需要意志努力的注意。</li><li><strong>REM睡眠</strong>——快速眼动睡眠期，脑电活跃、肌肉松弛、梦境生动。</li><li><strong>感觉</strong>——人脑对直接作用于感觉器官的客观事物个别属性的反映。</li><li><strong>感受性</strong>——感觉器官对适宜刺激的感觉能力，与感觉阈限成反比。</li><li><strong>差别阈限</strong>——刚能觉察出两个同类刺激间最小差异的刺激量（最小可觉差）。</li><li><strong>感觉适应</strong>——刺激持续作用下感受性发生变化的现象。</li><li><strong>联觉</strong>——一种感觉通道的刺激引起另一种感觉通道体验的现象。</li><li><strong>知觉</strong>——人脑对直接作用于感觉器官的客观事物整体属性的反映。</li><li><strong>知觉恒常性</strong>——知觉条件在一定范围变化时，知觉映象仍保持相对不变（大小、形状、明度、颜色恒常）。</li><li><strong>错觉</strong>——在特定条件下对客观事物产生的歪曲的、具有规律性的知觉。</li><li><strong>学习</strong>——个体基于经验而产生的行为或行为潜能的相对持久的变化。</li><li><strong>强化</strong>——使某一行为发生频率增加的过程，分正强化与负强化。</li><li><strong>负强化</strong>——通过移除厌恶刺激使目标行为增加，不等同于惩罚。</li><li><strong>消退</strong>——条件反应因无条件/强化刺激不再出现而逐渐减弱消失。</li><li><strong>观察学习</strong>——班杜拉提出，个体通过观察榜样行为及其后果而习得新行为。</li><li><strong>记忆</strong>——过去经验在人脑中的反映，包括编码、存储、提取三个过程。</li><li><strong>短时记忆</strong>——保持约20-30秒、容量7±2组块的信息暂存系统。</li><li><strong>前摄抑制 / 倒摄抑制</strong>——先/后学习的材料对保持与回忆后/先学习材料的干扰作用。</li><li><strong>舌尖现象</strong>——明明知道却暂时提取不出，证明遗忘可能是提取失败而非痕迹消失。</li><li><strong>思维</strong>——人脑对客观事物间接的、概括的反映，揭示事物本质与内在联系。</li><li><strong>定势</strong>——先前活动形成的心理准备状态，影响后继问题解决，兼具促进与阻碍作用。</li><li><strong>功能固着</strong>——只看到物体的惯常功能而看不到其他用途，阻碍问题解决。</li><li><strong>智力</strong>——认识、理解事物与解决问题、适应环境的能力的综合。</li><li><strong>流体智力 / 晶体智力</strong>——以生理为基础、随生理成熟变化的基本认知能力／由知识经验积累而来的能力。</li><li><strong>离差智商</strong>——韦克斯勒提出的以同年龄组均数为100、标准差为15表示的智商。</li><li><strong>动机</strong>——激发、引导和维持个体活动并使之朝向某一目标的内部动力。</li><li><strong>耶克斯-多德森定律</strong>——动机强度与工作效率呈倒U形关系，中等强度最佳，任务难度影响最佳水平。</li><li><strong>自我效能感</strong>——班杜拉提出，个体对自己能否成功完成某行为的主观判断。</li><li><strong>情绪</strong>——人对客观事物是否符合自身需要而产生的态度体验，含主观体验、生理唤醒与外部表现。</li><li><strong>应激</strong>——个体在出乎意料的紧张与危险情境下产生的高度紧张的情绪状态。</li><li><strong>情绪调节</strong>——个体对情绪的发生、体验与表达施加影响的过程，认知重评优于表达抑制。</li><li><strong>意志</strong>——自觉地确定目的、并根据目的支配调节行动、克服困难以实现目的的心理过程。</li><li><strong>双趋冲突</strong>——两个同样有吸引力的目标只能择其一时的动机冲突。</li><li><strong>气质</strong>——表现在心理活动动力特征方面的稳定的先天个性心理特征，无好坏之分。</li><li><strong>性格</strong>——人对现实的态度与相应行为方式中稳定的心理特征，态度特征是其核心。</li><li><strong>防御机制</strong>——自我为减轻焦虑而无意识地采用的心理策略（压抑、投射、合理化、升华等）。</li><li><strong>认知失调</strong>——费斯汀格提出，个体同时持有相互矛盾的认知时产生的不愉快紧张状态。</li><li><strong>从众</strong>——在真实或想象的群体压力下，个体改变行为或信念以与群体一致的现象。</li></ol>
+<hr>
+<h2 class="part">三、简答 / 论述预测题（30题，题后为答题框架）</h2>
+<details class="sec"><summary>【A组：基础概念类】</summary><div class="body"><ol><li><strong>简述心理现象的结构。</strong></li></ol>
+<p>框架：心理过程（认知/情绪情感/意志）＋个性心理（倾向性/特征）＋心理状态；各举例子。</p>
+<ol><li><strong>简述心理学的主要研究方法及其优缺点。</strong></li></ol>
+<p>观察法（真实但不能控因果）、实验法（可因果但生态效度低）、调查法（高效但主观）、测验法（标准化）、个案法（深入但难推广）、相关法（非因果）。</p>
+<ol><li><strong>简述科学心理学的诞生与主要学派。</strong></li></ol>
+<p>1879冯特莱比锡；构造/机能/行为/格式塔/精神分析/人本/认知，各一句核心主张。</p>
+<ol><li><strong>试述大脑左右半球功能一侧化及其限度。</strong></li></ol>
+<p>左语言逻辑、右空间情绪；裂脑人证据；强调"相对分工、协同工作"，反对脑功能绝对二分。</p>
+<ol><li><strong>简述神经元的结构与神经冲动的传导。</strong></li></ol>
+<p>胞体-树突-轴突-髓鞘-终扣；静息电位-动作电位-全或无-跳跃式传导-突触化学传递。</p>
+<ol><li><strong>简述注意的种类与品质。</strong></li></ol>
+<p>无意/有意/有意后；广度、稳定性、分配、转移；区分注意转移与注意分散。</p>
+<ol><li><strong>简述睡眠的阶段与机能。</strong></li></ol>
+<p>NREM1-4＋REM；90分钟周期；REM与梦、记忆巩固有关；睡眠剥夺影响认知与情绪。</p>
+<ol><li><strong>简述感受性与感觉阈限的关系及韦伯定律。</strong></li></ol>
+<p>反比；K=ΔI/I；举例差别阈限在营销与工效学中的应用。</p>
+<ol><li><strong>简述感觉与知觉的区别与联系。</strong></li></ol>
+<p>个别属性vs整体属性；感觉是知觉基础，知觉是感觉的组织与解释；都属认识过程的感性阶段。</p>
+<ol><li><strong>简述知觉的基本特征并举例。</strong></li></ol>
+<p>选择性、整体性、理解性、恒常性。</p>
+<ol><li><strong>列举常见的似动现象并说明。</strong></li></ol>
+<p>动景运动、诱发运动、运动后效、自主运动。</p>
+<ol><li><strong>简述经典性条件作用与操作性条件作用的异同。</strong></li></ol>
+<p>应答行为vs操作行为；刺激在前vs行为在前（后果）；被动vs主动；举例。</p>
+<ol><li><strong>试述强化与惩罚的区别，并说明惩罚的局限。</strong></li></ol>
+<p>正/负强化、正/负惩罚表；惩罚副作用（情绪、回避、不教新行为、需持续）；替代方案：强化替代行为、消退、代币制。</p>
+<ol><li><strong>简述班杜拉观察学习的过程。</strong></li></ol>
+<p>注意-保持-动作再现-动机；替代强化与自我强化；媒体暴力与榜样教育的启示。</p>
+<ol><li><strong>简述记忆的三级加工模型。</strong></li></ol>
+<p>感觉记忆-短时记忆-长时记忆；容量、时间、编码方式、遗忘原因；工作记忆模型补充。</p>
+<ol><li><strong>试述遗忘的原因及提高记忆效果的方法。</strong></li></ol>
+<p>衰退/干扰/压抑/提取失败/同化；艾宾浩斯曲线先快后慢；及时复习、分散复习、深加工、组织化、过度学习、提取练习、睡眠。</p>
+<ol><li><strong>简述思维的特征、种类与过程。</strong></li></ol>
+<p>间接性、概括性；动作/形象/抽象、聚合/发散；分析综合、比较、抽象概括、具体化系统化。</p>
+<ol><li><strong>影响问题解决的因素有哪些？</strong></li></ol>
+<p>问题情境、定势、功能固着、动机强度（倒U）、知识经验、原型启发、酝酿；举例实验。</p>
+<ol><li><strong>比较算法与启发式。</strong></li></ol>
+<p>定义、保证解但慢 vs 快但不保证；启发式带来偏差。</p>
+<ol><li><strong>简述智力的主要理论。</strong></li></ol>
+<p>二因素、群因素、三维结构、流体晶体、三元/成功智力、多元智力、情绪智力；各一句。</p>
+<ol><li><strong>简述马斯洛需要层次理论及其评价。</strong></li></ol>
+<p>五层（或七层）内容；由低到高、相对满足、优势需要；贡献与批评（机械、跨文化局限）。</p>
+<ol><li><strong>试述情绪的主要理论。</strong></li></ol>
+<p>詹姆斯-兰格、坎农-巴德、沙赫特-辛格两因素、拉扎勒斯评价理论；比较其因果顺序与认知位置。</p>
+<ol><li><strong>简述意志行动的阶段与意志品质。</strong></li></ol>
+<p>采取决定（动机冲突四类型）与执行决定；自觉性、果断性、自制性、坚持性及其对立面。</p>
+<ol><li><strong>比较气质与性格。</strong></li></ol>
+<p>先天/后天、有无好坏、稳定性差异、动力特征vs态度行为特征；二者关系。</p>
+<ol><li><strong>试述弗洛伊德的人格结构理论与防御机制。</strong></li></ol>
+<p>本我-自我-超我；意识层次；列举5种以上防御机制并举例；简要评价。</p>
+<ol><li><strong>简述大五人格模型。</strong></li></ol>
+<p>OCEAN 五个维度含义；跨文化稳定性；与行为结果的关系（责任心预测绩效、神经质预测情绪困扰）。</p>
+<ol><li><strong>简述态度的构成与功能，态度如何改变？</strong></li></ol>
+<p>ABC三成分；四项功能；霍夫兰德说服模型、ELM中心/外周路径、认知失调理论及登门槛技术。</p>
+<ol><li><strong>试述凯利三维归因理论与常见归因偏差。</strong></li></ol>
+<p>区别性、一致性、一贯性；基本归因错误、自利偏差、行动者-观察者效应。</p>
+<ol><li><strong>试述从众与服从的经典研究与影响因素。</strong></li></ol>
+<p>阿希线段实验、米尔格拉姆电击实验；各列3-5个影响因素；伦理讨论。</p>
+<ol><li><strong>简述皮亚杰认知发展阶段理论。</strong></li></ol>
+<p>图式、同化、顺应、平衡；四阶段年龄与特点；评价（低估幼儿、文化普遍性争议）。</p></div></details>
+<details class="sec"><summary>【B组：综合论述 / 应用类】</summary><div class="body"><ol><li><strong>论述遗传与环境对心理发展的影响。</strong></li></ol>
+<p>双生子与收养研究证据；遗传度；交互作用与表观遗传；教育启示。</p>
+<ol><li><strong>论述埃里克森心理社会发展理论及其教育意义。</strong></li></ol>
+<p>八阶段及核心冲突；青少年同一性；对家庭与学校教育的启示。</p>
+<ol><li><strong>论述依恋理论及其对人格发展的影响。</strong></li></ol>
+<p>鲍尔比、安斯沃斯陌生情境四种类型；内部工作模型；早期依恋与日后人际关系。</p>
+<ol><li><strong>论述心理健康的判断标准与促进途径。</strong></li></ol>
+<p>标准（八条）；三级预防；个体层面（认知重构、社会支持、运动睡眠、求助）。</p>
+<ol><li><strong>论述压力的认知交互作用模型与应对策略。</strong></li></ol>
+<p>拉扎勒斯的初级/次级/再评价；问题聚焦 vs 情绪聚焦；社会支持的缓冲假说；举例大学生学业压力。</p>
+<ol><li><strong>比较神经症性障碍与精神病性障碍。</strong></li></ol>
+<p>自知力、现实检验、社会功能、症状性质、治疗方式。</p>
+<ol><li><strong>论述助人行为的影响因素与旁观者效应。</strong></li></ol>
+<p>五步骤模型；责任分散、情境模糊、评价顾忌；如何促进助人（明确责任、示范、教育）。</p>
+<ol><li><strong>论述侵犯行为的成因及减少侵犯的途径。</strong></li></ol>
+<p>本能论/挫折-侵犯/社会学习；生理与社会因素；宣泄的争议、惩罚与替代学习、媒体素养。</p>
+<ol><li><strong>论述人际吸引的因素与亲密关系的维持。</strong></li></ol>
+<p>接近、外表、相似、互补、互惠；社会渗透与自我表露；投资模型；沟通与冲突处理。</p>
+<ol><li><strong>论述老年期心理发展与成功老化。</strong></li></ol>
+<p>认知与情绪变化（社会情绪选择理论）；SOC模型；活动与脱离理论；社会政策与个人层面。</p>
+<hr></div></details>
+<h2 class="part">四、自测卷</h2>
+<details class="sec"><summary>自测卷（一）</summary><div class="body"><p><strong>一、名词解释（每题4分，共20分）</strong></p>
+<ol><li>感觉适应　2. 工作记忆　3. 负强化　4. 认知失调　5. 气质</li></ol>
+<p><strong>二、单项选择题（每题2分，共20分）</strong></p>
+<ol><li>科学心理学诞生的标志是（　）</li></ol>
+<p>A. 冯特出版《生理心理学原理》　B. 冯特1879年在莱比锡建立心理学实验室　C. 华生发表行为主义宣言　D. 弗洛伊德创立精神分析</p>
+<ol><li>"入芝兰之室，久而不闻其香"属于（　）A. 感觉对比　B. 感觉适应　C. 联觉　D. 后像</li><li>短时记忆的容量约为（　）A. 5±2　B. 7±2　C. 9±2　D. 无限</li><li>只看到锤子能钉钉子而想不到它还能当镇纸，这属于（　）A. 定势　B. 功能固着　C. 迁移　D. 原型启发</li><li>韦克斯勒量表使用的智商是（　）A. 比率智商　B. 离差智商　C. 教育商数　D. 成就商数</li><li>认为情绪产生的关键是"生理唤醒＋认知标签"的理论是（　）A. 詹姆斯-兰格　B. 坎农-巴德　C. 沙赫特-辛格　D. 拉扎勒斯</li><li>先学习的材料对后学习材料的干扰称为（　）A. 前摄抑制　B. 倒摄抑制　C. 消退　D. 泛化</li><li>阿希的线段实验研究的是（　）A. 服从　B. 从众　C. 去个体化　D. 社会惰化</li><li>儿童获得客体永久性发生在皮亚杰的（　）A. 感知运动期　B. 前运算期　C. 具体运算期　D. 形式运算期</li><li>塞里一般适应综合征的第三阶段是（　）A. 警觉期　B. 抵抗期　C. 衰竭期　D. 恢复期</li></ol>
+<p><strong>三、简答题（每题10分，共30分）</strong></p>
+<ol><li>简述知觉的基本特征。</li><li>简述遗忘的原因及提高记忆效果的方法。</li><li>简述马斯洛需要层次理论的内容。</li></ol>
+<p><strong>四、论述题（每题15分，共30分）</strong></p>
+<ol><li>试述情绪的主要理论，并比较它们的异同。</li><li>联系实际论述压力的认知交互作用模型及应对策略。</li></ol></div></details>
+<details class="sec"><summary>自测卷（一）答案要点</summary><div class="body"><ul><li class="lv0"><strong>名词</strong>：①刺激持续作用下感受性发生变化（暗适应/明适应）。②巴德利提出的信息暂存与加工系统，含中央执行、语音环路、视空间模板、情景缓冲器。③移除厌恶刺激使行为频率增加，≠惩罚。④费斯汀格：同时持有矛盾认知产生的紧张状态，驱动态度/行为改变。⑤表现在心理活动强度、速度、灵活性等动力特征上的先天稳定个性特征，无好坏之分。</li><li class="lv0"><strong>单选</strong>：1B　2B　3B　4B　5B　6C　7A　8B　9A　10C</li><li class="lv0"><strong>简答1</strong>：选择性、整体性、理解性、恒常性，各配一句定义与例子。</li><li class="lv0"><strong>简答2</strong>：衰退说、干扰说（前摄/倒摄）、压抑说、提取失败说、同化说；艾宾浩斯先快后慢；及时复习、分散复习、意义加工、组织化、过度学习、提取练习、多通道、睡眠。</li><li class="lv0"><strong>简答3</strong>：生理、安全、归属与爱、尊重、自我实现（加求知、审美）；由低到高，低层相对满足后出现高层需要；优势需要决定行为；评价（贡献与机械性局限）。</li><li class="lv0"><strong>论述1</strong>：詹姆斯-兰格（生理→情绪）、坎农-巴德（丘脑、同时）、沙赫特-辛格（生理唤醒＋认知标签）、拉扎勒斯（认知评价先于情绪）；相同点：都承认生理与认知参与；差异：因果顺序与认知的位置；补充扎荣茨情感优先。</li><li class="lv0"><strong>论述2</strong>：拉扎勒斯模型——初级评价（威胁/挑战）、次级评价（应对资源）、再评价；压力取决于评价而非事件；应对分问题聚焦与情绪聚焦；社会支持缓冲假说；举例考试压力：重构认知、分解任务、时间管理、求助与运动。</li></ul></div></details>
+<details class="sec"><summary>自测卷（二）</summary><div class="body"><p><strong>一、名词解释（每题4分，共20分）</strong></p>
+<ol><li>观察学习　2. 最近发展区　3. 认知重评　4. 基本归因错误　5. 应激</li></ol>
+<p><strong>二、简答题（每题12分，共36分）</strong></p>
+<ol><li>简述气质与性格的区别与联系。</li><li>简述影响问题解决的心理因素。</li><li>简述经典性条件作用与操作性条件作用的主要区别。</li></ol>
+<p><strong>三、案例分析题（20分）</strong> 案例：小李，大一新生。高考志愿由父母填报，入学后对专业毫无兴趣，上课走神、夜间失眠，常自责"我什么都做不好"，拒绝参加社团活动，期中两门课不及格后更加回避学习，整日刷手机。 问题：（1）用相关理论分析小李存在的主要问题（至少从动机、情绪、行为三个角度）；（2）提出三条干预建议并说明理论依据。</p>
+<p><strong>四、论述题（24分）</strong></p>
+<ol><li>试述社会影响的主要形式（从众、服从、去个体化、社会惰化）及其心理机制，并结合实例说明如何在群体中减少消极影响。</li></ol></div></details>
+<details class="sec"><summary>自测卷（二）答案要点</summary><div class="body"><ul><li class="lv0"><strong>名词</strong>：①班杜拉：通过观察榜样行为及其后果习得行为，四过程为注意、保持、动作再现、动机。②维果茨基：儿童独立解决问题的水平与在成人指导下能达到的水平之间的差距；支架式教学的基础。③格罗斯情绪调节策略：改变对情境的理解与评价以改变情绪反应，优于表达抑制。④解释他人行为时高估个人特质、低估情境因素的倾向。⑤个体在出乎意料的紧张危险情境下产生的高度紧张的情绪状态。</li><li class="lv0"><strong>简答1</strong>：气质先天、无好坏、表现为动力特征；性格后天、有社会评价、表现为态度与行为方式；气质影响性格形成速度与表现方式，性格可掩蔽改造气质；教育应"因气质施教"。</li><li class="lv0"><strong>简答2</strong>：问题情境、定势、功能固着、动机强度（倒U）、知识经验、原型启发、酝酿、情绪与人格（焦虑、刻板）、元认知监控。</li><li class="lv0"><strong>简答3</strong>：经典条件作用针对应答行为、刺激在前（CS-UCS配对）、个体被动、强化物为无条件刺激；操作条件作用针对自发操作行为、后果在后、个体主动、强化物为行为后果；消退、泛化、分化均存在；举例。</li><li class="lv0"><strong>案例分析</strong>：①动机——缺乏内在动机（自我决定论：自主、胜任、关系三需要受挫，专业非自主选择→自主性缺失；成绩失败→胜任感下降；回避社交→关系需要未满足），成就动机偏"避免失败"，动机强度过高/过低影响效率。②情绪——持续负性情绪与自责，负性归因风格（韦纳：将失败归于内部的、稳定的、不可控的能力）→ 习得性无助；失眠为应激生理反应。③行为——回避学习被负强化（回避焦虑短暂缓解）维持，形成恶性循环；刷手机为逃避型应对。</li></ul>
+<p>干预建议：a. <strong>归因训练＋自我效能重建</strong>（韦纳、班杜拉）：把失败归因于策略与努力（内部、不稳定、可控），设置小步可达目标积累成功经验。b. <strong>认知重构与行为激活</strong>（认知行为取向）：识别"我什么都做不好"的全或无思维，用活动安排表与分级任务恢复行动，打破回避的负强化循环。c. <strong>满足基本心理需要与重建社会支持</strong>（自我决定论）：探索专业兴趣或转专业/辅修以提升自主性，加入小范围社团、建立同伴联结，必要时转介学校心理咨询中心。可补充睡眠卫生与放松训练。</p>
+<ul><li class="lv0"><strong>论述</strong>：①从众（阿希，信息性影响＋规范性影响）；②服从（米尔格拉姆，权威、责任转移、逐步升级、受害者距离）；③去个体化（匿名与责任分散，自我意识降低）；④社会惰化（责任分散、评价顾忌降低、努力可辨识性下降）。减少消极影响的措施：提高个体可辨识性与责任明确化、指定责任人、公开反馈、引入异议者/唱反调者、匿名头脑风暴后公开讨论、增强自我意识（镜子和摄像头效应）、建立心理安全氛围、领导力问责。</li></ul>
+<hr></div></details>
+<h2 class="part">五、考前3小时急救清单</h2>
+<ul><li class="lv0">1879 冯特 莱比锡 → 科学心理学诞生；行为主义华生1913；认知奈瑟1967。</li><li class="lv0">学派速记：构造（元素/内省）·机能（功能）·行为（S-R/可观察）·格式塔（整体/顿悟）·精神分析（潜意识）·人本（自我实现/第三势力）·认知（信息加工）。</li><li class="lv0">感觉vs知觉＝个别vs整体；感受性与阈限成反比；韦伯 K=ΔI/I。</li><li class="lv0">知觉四性：选择·整体·理解·恒常。</li><li class="lv0">记忆三级：感觉记忆-短时（7±2）-长时；遗忘先快后慢；前摄/倒摄。</li><li class="lv0">学习：经典（巴甫洛夫，刺激在前）vs操作（斯金纳，后果在后）；负强化≠惩罚。</li><li class="lv0">思维：间接性·概括性；定势·功能固着·倒U曲线。</li><li class="lv0">智力：斯皮尔曼 g/s、卡特尔流体/晶体、斯滕伯格三元、加德纳多元；离差智商 100+15Z。</li><li class="lv0">动机：马斯洛五层、韦纳归因三维度、班杜拉自我效能、德西自我决定（自主·胜任·关系）。</li><li class="lv0">情绪理论顺序：詹兰（生理→情绪）→坎巴（同时）→沙辛（生理+标签）→拉扎勒斯（评价→情绪）。</li><li class="lv0">意志四品质：自觉·果断·自制·坚持（记对立面更易得分）。</li><li class="lv0">人格：大五 OCEAN；弗洛伊德本我自我超我；防御机制；气质无好坏、性格有评价。</li><li class="lv0">社会：从众阿希·服从米尔格拉姆·旁观者达利与拉塔内·归因凯利三维·失调费斯汀格。</li><li class="lv0">发展：皮亚杰四阶段·维果茨基 ZPD·柯尔伯格三水平六阶段·埃里克森八阶段·安斯沃斯四依恋类型。</li><li class="lv0">异常：神经症有自知力、精神病性无自知力且现实检验受损。</li><li class="lv0">压力：塞里 GAS 三期；拉扎勒斯评价-应对；问题聚焦 vs 情绪聚焦；社会支持缓冲假说。</li></ul></section>
+<section class="panel" id="p1"><h1 class="sub">心理咨询的理论与实务 · 期末复习包</h1>
+<blockquote>教材：江光荣《心理咨询的理论与实务》（高等教育出版社，第2/3版通用；第2版另有第15章"其他疗法"）</blockquote>
+<blockquote>结构：考点速记 → 名词解释（40条） → 简答/论述预测（25题） → 咨询技术对比表 → 自测卷2套（含答案要点）</blockquote>
+<h2 class="part">使用说明</h2>
+<ul><li class="lv0">这门课60%的分在<strong>概念辨析</strong>（心理咨询vs心理治疗、共情vs同情、移情vs反移情、阻抗与防御）和<strong>四大疗法对比</strong>（精神分析/行为/以人为中心/理情行为）。</li><li class="lv0">疗法的答题模板固定：<strong>代表人物 → 人性观/病因观 → 核心概念 → 治疗目标 → 主要技术 → 评价（贡献+局限）</strong>。按这个顺序写，论述题不会漏分。</li><li class="lv0">第2版与第3版章节编号不同（第3版把伦理提到第2章、个案概念化到第9章），考点内容一致，按知识点复习即可。</li></ul>
+<hr>
+<h2 class="part">一、考点速记</h2>
+<details class="sec"><summary>绪论：人的发展与助人专业</summary><div class="body"><ul><li class="lv0"><strong>心理咨询的定义</strong>：在良好的咨询关系基础上，由经过专业训练的人员运用心理学的理论与技术，帮助来访者（当事人）消除或缓解心理困扰、促进其成长与发展的专业助人过程。</li><li class="lv0"><strong>心理咨询 vs 心理治疗（高频）</strong>：</li><li class="lv1">对象：咨询多为正常人、发展性与适应性困扰（轻中度）；治疗多为心理障碍患者（重度、符合诊断标准）。</li><li class="lv1">目标：咨询重发展、教育、支持与预防；治疗重矫治、人格重建。</li><li class="lv1">时长：咨询相对短程；治疗较长程。</li><li class="lv1">从业者与场所：咨询师多在学校的心理咨询中心、社区、企业；治疗师多在医疗机构，需医学背景配合。</li><li class="lv1">二者本质相同——都是"以心理学理论为基础的专业助人关系"，界限日益模糊。</li><li class="lv0"><strong>心理咨询 vs 非正式助人（朋友聊天）</strong>：有专业理论与技能、有明确的专业关系与设置、以当事人利益为中心、咨询师经过系统训练与督导、有伦理规范。</li><li class="lv0"><strong>心理咨询与治疗的共同要素（Frank 弗兰克，必背）</strong>：</li></ul>
+<ol><li>与一位鼎力相助的人保持一种密切、有情感交流的信任关系；</li><li>治疗背景或设置（地点、仪式、专业身份带来的期望与安慰）；</li><li>一套治疗理论或概念构想（提供解释框架，重建意义）；</li><li>与理论相联系的一套治疗程序（双方都相信的行动序列）。</li></ol>
+<ul><li class="lv0"><strong>疗效因素的比例（Lambert 兰伯特）</strong>：<strong>共同因素约40%、期望与安慰剂效应约15%、技术方法约15%、当事人自身与治疗外因素约30%</strong>。结论：关系 &gt; 技术，但仍需技术。</li><li class="lv0"><strong>心理咨询的哲学基础</strong>：对人的尊重、相信人的潜能与可改变性、强调自主与自决。科学基础：心理学的实证研究（疗效研究、共同要素研究）。文化基础：不同文化对"痛苦""自我""求助"的理解不同，需要文化敏感性与本土化。</li><li class="lv0"><strong>咨询师的条件</strong>：知识（理论、心理病理、发展与社会心理）、技能（会谈与干预技术）、态度与人格（共情、真诚、尊重、觉察力、容忍模糊、自我觉知）。Egan 强调助人者的"存在方式"比技巧更根本。</li></ul></div></details>
+<details class="sec"><summary>第1章 心理咨询与治疗的历史</summary><div class="body"><ul><li class="lv0"><strong>中国传统文化中的心理治疗思想</strong>：《黄帝内经》情志致病与"情志相胜"（悲胜怒、恐胜喜、怒胜思、喜胜忧、思胜恐）；祝由术（祝说病由，含暗示与宣泄）；中医的整体观与身心一体；气功、禅修中的静心与觉察；民俗中的宣泄与仪式。</li><li class="lv0"><strong>西方心理治疗的发展</strong>：中世纪把异常行为归因于鬼魔附体（驱魔、残酷对待）→ 18-19世纪皮内尔（Pinel）解除精神病人的锁链，人道主义改革 → 麦斯麦（Mesmer）的"动物磁气"（麦斯麦术，暗示与催眠的雏形）→ 沙可（Charcot）、伯恩海姆对催眠的研究 → 弗洛伊德创立精神分析（宣泄法、自由联想、梦的解析）→ 20世纪行为主义、人本主义、认知取向相继兴起。</li><li class="lv0"><strong>心理咨询在美国的兴起（三条线索）</strong>：</li></ul>
+<ol><li><strong>职业指导运动</strong>：帕森斯（Parsons）1908年在波士顿设立职业局，1909《选择职业》，被誉为"职业指导之父"，强调人-职匹配。</li><li><strong>心理卫生运动</strong>：比尔斯（Beers）1908年出版《一颗失而复得的心》（A Mind That Found Itself），以自身住院经历推动精神卫生改革。</li><li><strong>心理测验运动</strong>：一战期间团体智力测验、人格测验的发展，使个体差异的测量成为可能。</li></ol>
+<ul><li class="lv1">20世纪40年代罗杰斯《咨询与心理治疗》（1942）提出<strong>非指导式咨询</strong>，与威廉姆森的"指导式咨询"形成对立，是咨询专业独立化的标志。1950年代美国心理学会成立咨询心理学分支。</li><li class="lv0"><strong>中国心理咨询的发展</strong>：20世纪80年代起步（高校心理咨询中心、心理卫生协会）→ 90年代热线与培训 → 2001年《心理咨询师国家职业标准》，劳动部职业资格认证（三级/二级/一级）→ 2017年国家职业资格目录取消心理咨询师认证 → 现行走向：行业自律、能力水平评价、学历教育与规范化培训（注册系统、督导制度）。</li><li class="lv0"><strong>本土化问题</strong>：西方理论要与中国文化的表达痛苦方式（躯体化）、家庭结构、求助习惯、关系取向相适应；钟友彬的"认知领悟疗法"为本土代表之一。</li></ul></div></details>
+<details class="sec"><summary>第2章 助人专业伦理</summary><div class="body"><ul><li class="lv0"><strong>伦理的意义</strong>：保护当事人权益、维护专业声誉、指导实践困境中的决策。</li><li class="lv0"><strong>中国心理学会临床与咨询心理学工作伦理守则（第二版）基本原则</strong>：<strong>善行、责任、诚信、公正、尊重</strong>（五词必背）。</li><li class="lv0"><strong>当事人的权益</strong>：自主权（自决权）、知情同意权、受益权、公平待遇权、隐私与保密权。</li><li class="lv0"><strong>知情同意</strong>：在咨询开始前（或干预前）向当事人说明咨询的性质与过程、可能的风险与收益、替代方案、费用与时间设置、保密及其例外、双方的权利与义务；需以当事人能理解的语言与方式获得同意；未成年人等特殊群体需兼顾法定代理人。</li><li class="lv0"><strong>保密及其例外（必考）</strong>：</li><li class="lv1">一般原则：咨询中获得的一切信息均属保密范围；督导、教学、案例讨论、科研发表需去标识化并取得同意。</li><li class="lv1"><strong>例外（保密突破）</strong>：①当事人有明确的自伤或自杀危险；②当事人有伤害他人的危险（Tarasoff 判决式的"保护义务"）；③涉及虐待/忽视儿童、老人、受照料者（多数国家与地区为强制报告）；④法律要求（法院命令、司法程序）；⑤当事人主动放弃保密权并书面授权。</li><li class="lv1">操作要点：<strong>事先在知情同意中说明例外</strong>，突破保密前尽可能告知当事人，仅披露最少必要信息并记录。</li><li class="lv0"><strong>双重关系</strong>：</li><li class="lv1"><strong>性亲密关系绝对禁止</strong>（与当前当事人；多数守则还规定结束后的若干年内禁止，并禁止与当事人亲属发生亲密关系）。</li><li class="lv1"><strong>非性双重关系</strong>（师生、督导-被督导、朋友、商业伙伴、接受贵重礼品）应尽量避免，因其损害客观性与判断力、可能造成剥削；若不可避免（如小城市、特殊社群），需设置清晰边界、记录决策过程并寻求督导。</li><li class="lv0"><strong>专业能力边界</strong>：在受训与胜任范围内执业；跨文化与特殊人群服务需相应能力；遇到超出胜任范围的情况应及时<strong>转介</strong>。</li><li class="lv0"><strong>其他伦理议题</strong>：费用与广告（不得夸大疗效、不得保证治愈）、测验的使用与保管、记录的保存与销毁、网络咨询与远程服务的安全与适用性、危机处理、与媒体的接触。</li><li class="lv0"><strong>伦理决策</strong>：识别问题→查阅守则与法律→考虑各方权益→征求同行/督导意见→决策并记录→事后评估。</li></ul></div></details>
+<details class="sec"><summary>第3章 心理咨询的要素</summary><div class="body"><ul><li class="lv0"><strong>共同因素（Frank 四要素，见绪论）</strong>是跨疗法有效性的主要来源。</li><li class="lv0"><strong>当事人变量（谁更容易从咨询中获益）</strong>：</li><li class="lv1">问题特征：轻中度、人际与情绪困扰比精神病性障碍效果好。</li><li class="lv1">动机与期望：求助动机强、对咨询有合理期待者效果好。</li><li class="lv1"><strong>改变阶段（跨理论模型，普罗查斯卡与迪克莱门特）</strong>：前意向期→意向期→准备期→行动期→维持期；咨询策略需与所处阶段匹配（前意向期重点是提升觉察而非强行促进行动）。</li><li class="lv1">人格与依恋：宜人性、开放性高、安全依恋者同盟建立较易；高敌意或严重人格障碍者同盟建立困难。</li><li class="lv1">阻抗与"困难当事人"：表现为迟到、沉默、争辩、遗忘、讨好、躯体化等。</li><li class="lv1">社会支持与经济文化条件。</li><li class="lv0"><strong>咨询师变量</strong>：</li><li class="lv1">专业训练与经验（受训年限、督导）；</li><li class="lv1">人格与态度：<strong>共情能力、无条件积极关注、真诚一致、温暖、尊重、觉察力</strong>；</li><li class="lv1">理论取向与技术的匹配；</li><li class="lv1">自我觉知与个人议题的处理（"受伤的治愈者"）；咨询师的价值观与反移情管理；</li><li class="lv1">咨询师的个人成长与自我照顾（职业倦怠的预防）。</li><li class="lv0"><strong>其他变量</strong>：咨询设置（时间、频率、环境）、理论取向、机构与转介资源、费用、社会支持系统。</li></ul></div></details>
+<details class="sec"><summary>第4章 咨询目标</summary><div class="body"><ul><li class="lv0"><strong>目标的功能</strong>：为咨询提供方向；作为效果评估的标准；对当事人有激励作用；增强双方同盟。</li><li class="lv0"><strong>目标分类</strong>：</li><li class="lv1">按层次：终极目标（促进成长、自我实现/机能完善）—中间目标—直接目标/具体目标。</li><li class="lv1">按性质：矫正性目标（消除症状）·发展性目标（促进成长）·预防性目标。</li><li class="lv1">按主体：当事人目标 vs 咨询师目标（需协商统一）。</li><li class="lv0"><strong>健全人格与咨询目标</strong>：江光荣以"自我实现的人/机能完善者"作为健全人格的参照——能准确充分地知觉经验、与环境保持良好接触、对经验开放、信任自身机体、有自主性与创造性、能与人建立亲密关系。</li><li class="lv0"><strong>目标确立的原则</strong>：<strong>具体、可观察可测量、现实可行、由双方共同商定、分阶段、正向表述</strong>（讲"要做什么"而非"不要做什么"）、兼顾认知-情绪-行为三层面、尊重当事人的价值与文化。</li><li class="lv0"><strong>目标管理</strong>：商定→分解（把大目标化为小步骤）→执行中的调整→阶段性评估→结束时的总结评价。</li><li class="lv0"><strong>价值与价值干预（论述常考）</strong>：</li><li class="lv1"><strong>价值中立</strong>源自罗杰斯，指不评判、不把自己的价值观强加给当事人；但完全的"价值中立"在实践中不可能（咨询师选择何种理论、何种目标本身都含价值）。</li><li class="lv1"><strong>价值干预是必要的</strong>：当事人的价值观与其困扰直接相关（如"必须被所有人喜欢"），此时需要价值澄清与价值引导。</li><li class="lv1"><strong>原则</strong>：承认价值多元；觉察并悬置自己的价值观；尊重当事人自决；以价值澄清为主、避免灌输；对明显危害自身或他人的价值须明确干预；把价值议题作为咨询对话的一部分而非暗中操作。</li><li class="lv1">江光荣区分"价值中立"的不同含义：态度上的接纳 vs 内容上的不干预，前者应坚持，后者不可能也不必要。</li></ul></div></details>
+<details class="sec"><summary>第5章 咨询关系</summary><div class="body"><ul><li class="lv0"><strong>关系的地位</strong>：研究一致表明，咨询关系（同盟）是疗效的最强预测因素之一；"关系先于技术，技术是关系的载体"。</li><li class="lv0"><strong>工作同盟（Bordin 鲍尔丁三成分，必背）</strong>：</li></ul>
+<ol><li><strong>任务（task）</strong>：双方对"做什么"的共识；</li><li><strong>目标（goal）</strong>：双方对"去哪儿"的共识；</li><li><strong>情感联结（bond）</strong>：信任、喜欢、相互尊重的情感纽带。</li></ol>
+<ul><li class="lv1"><strong>同盟破裂与修复（rupture-repair）</strong>：破裂表现为回避、不悦、直接对抗；识别破裂并修复，本身就是产生改变的关键契机。</li><li class="lv0"><strong>助长条件（罗杰斯，必背）</strong>：</li></ul>
+<ol><li><strong>真诚一致（congruence/genuineness）</strong>：不戴面具，内在体验与外在表达一致，适度自我表露；</li><li><strong>无条件积极关注（ acceptance/非占有性关怀）</strong>：接纳当事人而不带评判；</li><li><strong>共情（准确的同感性理解，empathy）</strong>：进入当事人的内在参照框架去感受其世界，并把理解传达给他。</li></ol>
+<ul><li class="lv1">罗杰斯认为促成改变的<strong>六个充分必要条件</strong>：双方有心理接触；当事人处于不一致/焦虑状态；咨询师在关系中保持一致；咨询师提供无条件积极关注；咨询师共情理解；当事人一定程度上感知到上述关注与理解。</li><li class="lv1"><strong>共情 ≠ 同情 ≠ 认同</strong>：共情是"我理解你的感受"，同情是"我可怜你"，认同是"我同意你的观点"。</li><li class="lv1">共情层次（Carkhuff 五层次）：从1（完全没有理解）到5（既理解明确内容也理解隐含意义）；高水平共情包含情感反映＋意义反映。</li><li class="lv0"><strong>其他关系要素</strong>：尊重与温暖、具体性、即时化（here and now）、对峙/面质、可信性、期望与希望感的激发。</li><li class="lv0"><strong>移情与反移情</strong>：</li><li class="lv1"><strong>移情</strong>：当事人把过去对重要他人的情感、态度、期待投射到咨询师身上（正性移情：依赖、理想化；负性移情：敌意、怀疑）。精神分析视其为治疗的核心材料。</li><li class="lv1"><strong>反移情</strong>：咨询师对当事人产生的情感反应；狭义指咨询师自身未解决议题的投射，广义包括一切对当事人的情感反应。是理解当事人的重要信息来源，但需觉察与管理，必要时应寻求督导。</li><li class="lv0"><strong>阻抗</strong>：阻碍咨询进程、使当事人回避探索与改变的一切力量。表现——沉默、迟到、忘事、讲无关话题、理性化、讨好、质疑咨询师、要求"给建议"；来源——对改变的恐惧、获益的丧失（继发性获益）、对暴露的羞耻、对依赖与分离的担心；处理——接纳正常化、探索其意义、回到同盟与目标的共识、放慢节奏，不与之硬碰硬。</li><li class="lv0"><strong>关系的发展与利用</strong>：初始建立→深化→破裂-修复→有意识地利用关系中的"此时此地"促进领悟→结束时处理分离。</li></ul></div></details>
+<details class="sec"><summary>第6章 一般咨询历程</summary><div class="body"><ul><li class="lv0"><strong>阶段模型（常用三阶段/五阶段）</strong>：</li><li class="lv1">Egan 三阶段：<strong>探索（探索问题与未被利用的机会）—领悟（形成新的理解与目标）—行动（计划并执行改变）</strong>。</li><li class="lv1">江光荣/常见五阶段：建立关系与结构化 → 问题澄清与评估 → 目标设定 → 干预/行动 → 结束与效果巩固。</li><li class="lv0"><strong>各阶段任务</strong>：</li></ul>
+<ol><li>初始阶段：建立关系、结构化、摄入信息、初步评估与概念化、危机筛查、商定目标。</li><li>探索阶段：情感探索、问题界定、资源与例外寻找。</li><li>行动阶段：选择策略、实施干预、处理阻碍、家庭作业与迁移。</li><li>结束阶段：效果评估、巩固与复发预防、处理分离情绪、必要的转介或随访。</li></ol>
+<ul><li class="lv0"><strong>结构化（structuring，必考名词）</strong>：</li><li class="lv1">定义：咨询师向当事人说明咨询的性质、过程、设置、双方角色与责任，为咨询提供可预期的框架。</li><li class="lv1">内容：时间与频率（一般每次50分钟，每周1次）、地点、费用与改约/取消规则、保密及其例外、咨询的方式与可能的不适（如情绪波动）、双方的责任（当事人需坦诚、做作业；咨询师需专业与保密）、转介与终止的条件。</li><li class="lv1">作用：降低不确定性与焦虑、建立安全感和同盟、明确边界减少伦理风险、提高当事人的参与度。</li><li class="lv1">注意：结构化应自然融入第一次会谈，而非照本宣科念"声明"。</li></ul></div></details>
+<details class="sec"><summary>第7章 咨询过程：会谈</summary><div class="body"><ul><li class="lv0"><strong>会谈的定义与类型</strong>：摄入性会谈（收集信息）、诊断/评估性会谈、咨询/治疗性会谈、危机会谈、转介会谈。</li><li class="lv0"><strong>倾听的三个层次</strong>：听<strong>内容</strong>（说了什么事实）→听<strong>情感</strong>（情绪是什么）→听<strong>意义/需求</strong>（对他意味着什么、他真正想要什么）；还要听<strong>非言语行为</strong>（表情、姿势、语调、沉默、停顿）与听<strong>自己</strong>（咨询师的内部反应）。</li><li class="lv0"><strong>倾听的姿态（SOLER，Ivey 提出）</strong>：<strong>S</strong>quarely 面对当事人；<strong>O</strong>pen 开放的姿态；<strong>L</strong>ean 身体适度前倾；<strong>E</strong>ye contact 保持目光接触；<strong>R</strong>elaxed 自然放松。</li><li class="lv0"><strong>倾听性技巧（Ivey 的基本关注技能）</strong>：</li><li class="lv1"><strong>提问</strong>：开放式提问（"能说说……吗"）用于打开话题；封闭式提问用于获取具体信息与聚焦；少用"为什么"（易引发防御与合理化），多用"什么""怎样"。</li><li class="lv1"><strong>鼓励与复述（轻微鼓励）</strong>：点头、"嗯""然后呢"、重复关键词，促进当事人继续。</li><li class="lv1"><strong>释义/内容反映（paraphrase）</strong>：用自己的话概括当事人陈述的事实内容。</li><li class="lv1"><strong>情感反映（reflection of feeling）</strong>：反映当事人表达或隐含的情绪，是最具治疗力的倾听技巧之一；格式为"你感到……，因为……"。</li><li class="lv1"><strong>澄清</strong>：请当事人对含糊、矛盾之处作进一步说明（"你说的XX具体是指？"）。</li><li class="lv1"><strong>概述/总结（summarize）</strong>：阶段性归纳内容、情感与主题，用于转换话题或结束会谈。</li><li class="lv0"><strong>影响性技巧</strong>：</li><li class="lv1"><strong>解释</strong>：从某一理论视角提供对问题成因与维持机制的说明（"关联解释—因果解释—机制解释"层次递进）。</li><li class="lv1"><strong>指导/提供信息与建议</strong>：技能训练、行为作业、阅读建议；慎用，避免养成依赖。</li><li class="lv1"><strong>自我表露（自我开放）</strong>：适度分享自己的相似经历或当下感受，目的是服务于当事人，需简短、有针对性、不转移焦点。</li><li class="lv1"><strong>面质/对峙（confrontation）</strong>：指出当事人言行、前后陈述或感受之间的矛盾；需建立在良好同盟基础上，用温和、具体、探究式的语气。</li><li class="lv1"><strong>即时化（immediacy）</strong>：直接讨论"此时此地"发生在双方之间的事（"我注意到刚才你提到这件事时笑了，我有点不确定那对你意味着什么"）。</li><li class="lv1"><strong>逻辑推论</strong>、<strong>反馈</strong>、<strong>角色扮演</strong>、<strong>空椅/角色转换</strong>（格式塔技术）、<strong>家庭作业与行为练习</strong>。</li><li class="lv0"><strong>技巧使用的原则</strong>：时机恰当（先关系后技术）；程度适度；与当事人的文化与接受度匹配；以当事人利益为唯一标准；技巧服务于目标而非炫技。</li></ul></div></details>
+<details class="sec"><summary>第8章 咨询过程：深入</summary><div class="body"><ul><li class="lv0"><strong>协助当事人探索</strong>：围绕"问题—情绪—需要—资源"展开；寻找<strong>例外</strong>（问题不发生或较轻的时刻）与既有资源；探索问题的来龙去脉与维持因素。</li><li class="lv0"><strong>协助当事人领悟</strong>：</li><li class="lv1">领悟的三个层次：<strong>关联</strong>（两件事有联系）→<strong>因果/模式</strong>（我总是……因为我……）→<strong>机制</strong>（深层需要、早期经验、核心信念如何造就当下模式）。</li><li class="lv1">领悟与改变的关系：领悟是改变的必要条件而非充分条件，须与行动连接。</li><li class="lv0"><strong>协助选择与决策</strong>：生成备选方案→评估各方案的代价与收益（可用<strong>决策平衡表</strong>：列出每个方案在自我、他人、短期、长期上的得失）→选定→承诺。尊重当事人的犹豫与矛盾（矛盾是决策中的正常现象，可用动机式访谈的方式探索）。</li><li class="lv0"><strong>协助行动</strong>：</li><li class="lv1">制定具体、可分解、有时间点与评估标准的行动计划；</li><li class="lv1">常用策略：目标分解与分级任务、行为练习与暴露、模仿与角色扮演、强化与自我强化、应对卡与提醒物、社会支持动员、放松训练与情境预演；</li><li class="lv1">预测障碍并预先制定应对方案（"如果……我就……"）。</li><li class="lv0"><strong>迁移与维持</strong>：促进技能向日常生活迁移（多情境练习）；<strong>复发预防</strong>（识别高危情境、区分"失误"与"复发"、制定应对计划）；逐步减少会谈频率、结束与随访安排。</li></ul></div></details>
+<details class="sec"><summary>第9章 个案概念化</summary><div class="body"><ul><li class="lv0"><strong>三个概念的区别</strong>：</li><li class="lv1"><strong>诊断</strong>：按诊断标准对障碍进行分类（如 DSM/ICD 分类）；</li><li class="lv1"><strong>评估</strong>：用测验、访谈等收集信息，描述当事人的功能与问题；</li><li class="lv1"><strong>个案概念化</strong>：在上述基础上，用某个理论框架对当事人的问题作出<strong>有解释力、可指导干预</strong>的整体说明，回答"为什么是这个人、在这个时候、出现这些问题"。</li><li class="lv0"><strong>概念化的功能</strong>：组织复杂信息；理解当事人；指导干预方案选择；预测治疗中的困难（如阻抗、同盟破裂）；促进同行与督导沟通。</li><li class="lv0"><strong>主要理论的概念化路径</strong>：</li><li class="lv1"><strong>精神分析/心理动力</strong>：核心冲突、防御方式、客体关系与移情模式、早期经验；</li><li class="lv1"><strong>行为</strong>：<strong>功能分析（SORC）</strong>：S 刺激/前因—O 机体变量—R 行为反应—C 结果/强化；亦可写作 ABC（前因-行为-后果）；</li><li class="lv1"><strong>认知</strong>：自动思维—中间信念（假设/规则）—核心信念（图式）；情境-思维-情绪-行为的循环；</li><li class="lv1"><strong>以人为中心</strong>：自我概念与经验的不一致、价值条件、经验被否认或歪曲；</li><li class="lv1"><strong>家庭与系统</strong>：家庭结构、边界、三角化、代际传递、症状的家庭功能（症状维持系统平衡）。</li><li class="lv0"><strong>江光荣的 PMDE 个案概念化模型</strong>：从四个层面组织信息——①<strong>问题表现</strong>（P，当前的症状与困扰）；②<strong>维持机制</strong>（M，使问题持续存在的心理机制）；③<strong>发生发展/成因</strong>（D，远端与近端的形成过程）；④<strong>预期与演化</strong>（E，对治疗走向与改变的预期）。<strong>四个字母的具体对应以教材第3版第三节原文为准。</strong></li><li class="lv0"><strong>概念化的过程</strong>：收集资料→形成假设→与当事人共同检验与修正→转化为干预计划→随咨询推进持续更新。概念化是<strong>假设</strong>，需要不断被修正，而非一次性结论。</li></ul></div></details>
+<details class="sec"><summary>第10章 精神分析疗法</summary><div class="body"><ul><li class="lv0"><strong>概观</strong>：弗洛伊德创立，后发展为自我心理学、客体关系、自体心理学、短程心理动力治疗等。</li><li class="lv0"><strong>基本理论</strong>：</li><li class="lv1"><strong>意识层次</strong>：意识—前意识—潜意识；潜意识是行为与症状的真正根源。</li><li class="lv1"><strong>人格结构</strong>：本我（快乐原则、本能冲动）、自我（现实原则、协调者）、超我（道德原则、理想与良心）。</li><li class="lv1"><strong>本能</strong>：生本能（力比多）与死本能（攻击）；心理能量有限，压抑需耗能。</li><li class="lv1"><strong>心理性欲发展阶段</strong>：口唇期（0-1）、肛门期（1-3）、性器期（3-6，俄狄浦斯/厄勒克特拉情结）、潜伏期（6-12）、生殖期；<strong>固着</strong>与<strong>退行</strong>。</li><li class="lv1"><strong>焦虑与防御机制</strong>：焦虑分现实性、神经症性、道德性；防御机制——压抑（最基本）、否认、投射、反向形成、合理化、置换（转移）、升华（成熟）、退行、理智化、隔离、抵消；防御过度或失败致症状。</li><li class="lv1"><strong>病因观</strong>：童年早期未被解决的潜意识冲突＋防御失败→症状是冲突的妥协形成。</li><li class="lv0"><strong>治疗过程与策略</strong>：</li><li class="lv1"><strong>目标</strong>：使潜意识意识化（"本我所在之处，自我亦应在"），解除压抑、扩展自我、提高爱与工作的能力。</li><li class="lv1"><strong>技术</strong>：自由联想；梦的分析（显梦/隐梦、梦的工作）；<strong>移情分析</strong>（移情是治疗的核心战场）；<strong>阻抗分析</strong>；解释；<strong>修通</strong>（反复解释、反复体验，直至真正内化）。</li><li class="lv1">设置：高频（每周1-5次）、长程（数月至数年）、躺椅、匿名与节制（分析师保持相对中立与空白屏幕）。</li><li class="lv1">现代发展：短程心理动力治疗（有时间限定、聚焦核心冲突）、强调此时此地的移情工作与治疗同盟。</li><li class="lv0"><strong>评价</strong>：贡献——提出潜意识与内心冲突、强调早期经验、首创"谈话治疗"、揭示防御与移情、影响整个心理咨询领域；局限——疗程长费用高、理论与概念难以证伪（科学性受质疑）、泛性论与决定论色彩、对严重障碍与急性危机适用性有限、研究支持相对薄弱（现代短程动力治疗已有一定实证支持）。</li></ul></div></details>
+<details class="sec"><summary>第11章 行为疗法</summary><div class="body"><ul><li class="lv0"><strong>概观</strong>：源于巴甫洛夫、华生、斯金纳与班杜拉；20世纪50年代后由沃尔普、艾森克等在临床中发展。</li><li class="lv0"><strong>基本理论</strong>：经典条件作用（恐惧与焦虑的习得与消退）、操作性条件作用（行为由后果维持）、社会学习理论（观察学习与模仿）；核心假设——<strong>适应不良行为是习得的，因此可以再学习（被消除或被替代）</strong>；反对以内在"疾病"解释行为，强调可观测可测量。</li><li class="lv0"><strong>治疗过程</strong>：</li></ul>
+<ol><li><strong>行为评估/功能分析</strong>（SORC 或 ABC：前因-行为-后果，明确行为的触发条件、频率、强度与强化来源）；</li><li>与当事人共同确定<strong>目标行为</strong>（具体、可测量、正向表述）；</li><li>选择技术并说明原理（知情同意）；</li><li>实施（常配合家庭作业、自我监测、基线记录）；</li><li><strong>评估与随访</strong>（用数据检验效果，如行为频率记录、量表）。</li></ol>
+<ul><li class="lv0"><strong>治疗技术（分类记忆）</strong>：</li><li class="lv1"><strong>基于经典条件作用</strong>：系统脱敏（沃尔普：放松训练＋构建焦虑等级表＋逐级脱敏，用于恐惧症）、<strong>满灌/冲击疗法</strong>（直接暴露于最大焦虑情境，见效快但脱落率高）、<strong>逐级暴露</strong>、<strong>厌恶疗法</strong>（把不良行为与厌恶刺激配对，伦理争议大）、<strong>暴露与反应预防 ERP</strong>（强迫症的一线疗法）。</li><li class="lv1"><strong>基于操作性条件作用</strong>：<strong>正强化</strong>、<strong>代币制</strong>、<strong>行为塑造</strong>、<strong>行为契约</strong>、<strong>消退</strong>、<strong>惩罚</strong>（慎用）、<strong>差别强化</strong>（强化替代行为）、<strong>暂停法 time-out</strong>、<strong>自我管理</strong>（自我监测-自我评估-自我强化）。</li><li class="lv1"><strong>基于社会学习</strong>：<strong>示范/模仿</strong>（榜样演示）、<strong>角色扮演与行为演练</strong>、<strong>社交技能训练</strong>、<strong>自信（果敢）训练</strong>。</li><li class="lv1"><strong>其他</strong>：<strong>放松训练</strong>（渐进式肌肉放松、呼吸训练）、<strong>生物反馈</strong>、<strong>系统脱敏</strong>中的想象暴露、<strong>刺激控制</strong>、<strong>线索暴露</strong>、<strong>习惯逆转训练</strong>（抽动与抓挠类）。</li><li class="lv0"><strong>评价</strong>：优点——目标明确、程序具体、可测量、有较扎实的实证支持（尤其焦虑障碍、强迫、儿童行为问题）、疗程相对短；局限——早期版本忽视认知与情绪、症状替代的说法缺乏证据、对复杂人格与意义问题解释力不足、技术与强化物使用涉及操纵与伦理问题、需当事人的高度配合。</li></ul></div></details>
+<details class="sec"><summary>第12章 以人为中心疗法</summary><div class="body"><ul><li class="lv0"><strong>概观</strong>：罗杰斯创立，历经<strong>非指导式咨询（1942）→当事人中心疗法（1951）→以人为中心（1970s后）</strong>；属于人本主义取向，被称为对精神分析与行为主义的"第三种力量"。</li><li class="lv0"><strong>基本理论</strong>：</li><li class="lv1"><strong>人性观</strong>：人本质上是积极的、社会化的、朝向建设性发展的；有<strong>实现倾向</strong>（actualizing tendency）——有机体趋向成长、自主、完善的根本动力。</li><li class="lv1"><strong>现象学立场</strong>：每个人都生活在自己的主观经验世界中，行为由其对现实的知觉决定；理解当事人必须进入其内在参照框架。</li><li class="lv1"><strong>自我理论</strong>：<strong>自我概念</strong>（对"我是谁"的知觉）与<strong>有机体经验</strong>的不一致导致焦虑与威胁；为维护自我概念而<strong>否认或歪曲经验</strong>（防御）；<strong>价值条件</strong>（只有符合他人设定的条件才被接纳）是心理困扰的根源——个体为了获得积极关注而疏离了真实的自我体验。</li><li class="lv1"><strong>机能完善者（fully functioning person）</strong>：对经验开放、存在性的生活（活在当下）、信任自己的机体、有自由感与创造性。</li><li class="lv1"><strong>治疗观</strong>：<strong>关系本身就是治疗</strong>；咨询师的态度与存在方式比技术更重要。</li><li class="lv0"><strong>治疗过程与策略</strong>：</li><li class="lv1"><strong>非指导原则</strong>：由当事人决定方向与内容，咨询师不作诊断、不作解释、不给建议、不主导。</li><li class="lv1"><strong>核心技术</strong>：<strong>倾听与反映</strong>（情感反映、释义、澄清、概述），<strong>真诚一致</strong>，<strong>无条件积极关注</strong>，<strong>共情性理解</strong>；强调"此时此地"与即时化。</li><li class="lv1"><strong>六个充分必要条件</strong>（见第5章）——只有当事人感知到这些条件，改变才会发生。</li><li class="lv1"><strong>改变的过程</strong>：从僵化到流动、从否认经验到接纳经验、从外部评价转向内部评价、从"应该"转向"我真正想要"。</li><li class="lv0"><strong>评价</strong>：贡献——把关系与共情置于治疗核心，奠定咨询关系研究的实证基础（人本主义对共同要素研究的推动）、强调人的尊严与自主，影响教育、管理、医患沟通等广泛领域；局限——技术体系相对单薄、疗效依赖于咨询师个人品质而难以标准化、对严重心理障碍与需要具体技能训练的问题效果有限、"非指导"在危机与认知偏差明显时可能不够、人性与"实现倾向"带有乐观预设。</li></ul></div></details>
+<details class="sec"><summary>第13章 理性情绪行为疗法（REBT）</summary><div class="body"><ul><li class="lv0"><strong>概观</strong>：艾利斯（Ellis）1955年创立理性治疗（RT），后为RET，1993年改名REBT；认知行为取向的先驱之一。</li><li class="lv0"><strong>基本理论</strong>：</li><li class="lv1"><strong>ABC 理论（核心必背）</strong>：<strong>A</strong> 诱发事件（Activating event）→ <strong>B</strong> 信念（Belief）→ <strong>C</strong> 情绪与行为后果（Consequence）。<strong>不是 A 直接引起 C，而是 B 引起 C</strong>（同样被拒绝，有人难过有人愤怒，取决于信念）。</li><li class="lv1"><strong>ABCDE（F）</strong>：<strong>D</strong> 辩驳/质疑（Dispute）→ <strong>E</strong> 效果（Effect，新的情绪与行为）→ <strong>F</strong> 新的感受（new Feeling）。</li><li class="lv1"><strong>非理性信念的三大特征（必背）</strong>：<strong>绝对化的要求</strong>（必须、应该、一定要）、<strong>过分概括化</strong>（以偏概全，"我什么都做不好"）、<strong>糟糕至极</strong>（灾难化，"完蛋了，受不了了"）。</li><li class="lv1">艾利斯列举的典型非理性信念（如"我必须被每一个人喜爱和赞许""我必须在各方面都能力强、有成就""事情必须按我期待的方式发展，否则太可怕"等）；三个"必须"是核心：我必须做好、你必须对我好、世界必须容易。</li><li class="lv1">心理困扰的根源是持续的内部自我言语（self-talk）与非理性信念；咨询目标不是消除负性情绪，而是用<strong>适当的负性情绪</strong>（悲伤、懊悔、关切）替代<strong>不适当的负性情绪</strong>（抑郁、内疚、愤怒）。</li><li class="lv0"><strong>治疗过程</strong>：</li></ul>
+<ol><li>说明 ABC 模型与心理困扰的机制（心理教育）；</li><li>识别 A 与 C，找出关键的非理性 B；</li><li><strong>D 辩驳</strong>：三种方式——<strong>觉察（detecting）</strong>、<strong>辩论（debating：逻辑的、经验的、 pragmatic 实用的，"这想法对我有帮助吗"）</strong>、<strong>辨别（discriminating：区分想要与必须）</strong>；</li><li>建立理性的替代信念（E）；</li><li>巩固：反复练习，形成新的思维习惯（F）。</li></ol>
+<ul><li class="lv0"><strong>技术</strong>：认知技术（<strong>辩论、理性情绪想象 REI、认知家庭作业、自我陈述训练、向他人传授</strong>）；情绪技术（<strong>理性情绪想象</strong>、角色扮演、幽默、冒险练习/羞耻攻击练习、无条件自我接纳 USA、无条件接纳他人）；行为技术（<strong>行为作业与真实脱敏、强化与惩罚、技能训练、暴露</strong>）。REBT 是"认知-情绪-行为"三管齐下。</li><li class="lv0"><strong>评价</strong>：贡献——认知革命先驱、理论简明、可操作、可自助、有实证研究支持，对焦虑抑郁与愤怒有效；局限——对抗性与指导性强，若关系基础薄弱易引起抵触；过度强调理性，可能低估情绪与关系的作用；"非理性"的判断带有咨询师的价值预设，需注意价值干预的边界；对严重精神障碍不适用。</li></ul></div></details>
+<details class="sec"><summary>第14章 结构式家庭治疗</summary><div class="body"><ul><li class="lv0"><strong>概观</strong>：米纽秦（Minuchin）创立于20世纪60-70年代；从系统论与结构论出发，认为<strong>症状属于家庭系统而非个人</strong>，治疗对象是家庭结构。</li><li class="lv0"><strong>基本概念</strong>：</li><li class="lv1"><strong>家庭结构</strong>：家庭成员间反复出现的互动模式，是一套无形的要求与规则。</li><li class="lv1"><strong>子系统</strong>：夫妻子系统、父母子系统、同胞子系统；子系统之间有<strong>边界</strong>。</li><li class="lv1"><strong>边界</strong>：规定谁能参与、如何参与——<strong>清晰（健康）</strong>、<strong>僵硬/僵化（疏离，缺乏支持）</strong>、<strong>模糊/弥散（纠缠，过度卷入）</strong>。</li><li class="lv1"><strong>家庭规则</strong>、<strong>权力与等级</strong>（谁是决策者）、<strong>联盟</strong>（两人联合对抗第三人）、<strong>三角化</strong>（把第三方卷入两人冲突以缓解焦虑）、<strong>家庭生命周期</strong>、<strong>家庭神话</strong>、<strong>代际传递</strong>。</li><li class="lv0"><strong>病态家庭结构</strong>：纠缠（边界模糊，过度卷入，成员自主性受损）与疏离（边界僵硬，缺乏情感支持）；三角化与跨代联盟（如母子结盟对抗父亲）；等级混乱（子女掌权、父母失能）；僵化、无法适应发展任务（如孩子离家、再婚）的家庭结构；"症状承载者"（被指认的病人 IP）承担了维持家庭平衡的功能。</li><li class="lv0"><strong>治疗过程与策略</strong>：</li><li class="lv1"><strong>目标</strong>：改变僵化的家庭互动模式与结构，建立清晰的边界、有效的等级与灵活的组织方式，使家庭能自行解决问题。</li><li class="lv1"><strong>技术</strong>：<strong>加入/顺应（joining &amp; accommodating）</strong>——进入家庭系统，接纳其风格建立同盟；<strong>演出（enactment）</strong>——让家庭在现场呈现其互动模式，以便观察与干预；<strong>重构（reframing）</strong>——给行为赋予新的意义，改变家庭的认知框架（如"他不是懒惰，是在用这种方式表达需要被关注"）；<strong>边界设定</strong>（改变座位、调整对话对象、阻止打断）；<strong>制造强度</strong>（重复、强调、延长）；<strong>打破平衡/挑战旧模式</strong>；<strong>家庭图谱（genogram）</strong>；<strong>布置家庭作业/任务</strong>；<strong>支持与教育</strong>。</li><li class="lv1">咨询师角色：主动、指导性强、导演式；强调"行动优先于领悟"。</li><li class="lv0"><strong>评价</strong>：贡献——把治疗单位由个人扩展到系统，揭示症状的家庭维持功能，对儿童青少年问题、进食障碍（尤其是厌食症）、心身障碍有显著疗效，技术生动；局限——理论概念较难操作化与验证、要求全家参与（现实中常有成员缺席）、对权力与控制的使用需警惕咨询师的价值强加、对严重精神障碍需与医学治疗结合。</li></ul></div></details>
+<details class="sec"><summary>第2版第15章 其他疗法（若教材含此章）</summary><div class="body"><ul><li class="lv0"><strong>现实疗法（格拉瑟 Glasser）</strong>：后发展为<strong>选择理论</strong>。认为人所有的行为都是为满足五种基本需要（生存/生理、爱与归属、权力/成就、自由、乐趣）的<strong>选择</strong>；心理困扰源于不满意的<strong>关系</strong>（当下关系，而非童年）；不主张用"心理疾病"解释行为。</li><li class="lv1"><strong>WDEP 系统</strong>：<strong>W</strong> 探索愿望与需要（Wants）→ <strong>D</strong> 探索当前正在做什么（Doing/方向）→ <strong>E</strong> 自我评价（Evaluation，"这对你有帮助吗"）→ <strong>P</strong> 制定计划（Planning，SAMIC：简单、可达成、可测量、即时、持续、由当事人控制）。</li><li class="lv1">强调当下、责任、计划、拒绝惩罚与借口。</li><li class="lv0"><strong>多模式治疗（拉扎勒斯 Lazarus，BASIC I.D.）</strong>：七个维度——<strong>B</strong>ehavior 行为、<strong>A</strong>ffect 情感、<strong>S</strong>ensation 感觉、<strong>I</strong>magery 意象、<strong>C</strong>ognition 认知、<strong>I</strong>nterpersonal 人际关系、<strong>D</strong>rugs/Physiology 药物与生理；主张技术折衷，做全面的功能剖面后针对各维度选用技术。</li><li class="lv0"><strong>森田疗法（森田正马，日本）</strong>：针对<strong>神经质症</strong>（普通神经质、强迫观念、发作性神经症如惊恐）；核心——<strong>顺其自然、为所当为</strong>（接受症状与情绪，带着症状去做该做的事）；<strong>疑病素质</strong>与<strong>精神交互作用</strong>（越关注越敏感越痛苦）是发病机制；治疗含<strong>绝对卧床期（4-7天）→轻作业期→重作业期→社会生活训练期</strong>四期，住院式与门诊式。</li><li class="lv0"><strong>钟氏领悟疗法（钟友彬，中国本土）</strong>：又称<strong>认知领悟疗法</strong>。认为症状的根源是幼年期的心理创伤与<strong>儿童式的思维方式</strong>固着于成人身上（用儿童的逻辑处理成人问题）；治疗以<strong>解释</strong>为核心，帮助当事人领悟其行为的幼稚性与不现实性，从而放弃症状性的应对；强调"领悟"而非训练，疗程短，适合强迫症与恐怖症；本土化特点——用中国人熟悉的说法作解释，注重权威与"引导领悟"的角色。</li></ul>
+<hr></div></details>
+<h2 class="part">二、名词解释（高频40条）</h2>
+<ol><li><strong>心理咨询</strong>——在良好咨询关系基础上，由受专业训练者运用心理学理论与技术，帮助当事人消除或缓解心理困扰、促进成长的专业助人过程。</li><li><strong>心理治疗</strong>——以心理学的理论与方法，对心理障碍患者进行矫治与人格重建的专业干预。</li><li><strong>共同要素（Frank）</strong>——跨越不同疗法而普遍存在的四种疗效成分：信任的治疗关系、治疗背景与设置、一套理论解释、一套治疗程序。</li><li><strong>知情同意</strong>——在咨询或干预前，向当事人充分说明性质、过程、风险收益、保密例外等信息，并取得其自愿同意。</li><li><strong>保密例外</strong>——在自伤自杀危险、伤人危险、虐待儿童或受照料者、法律要求、当事人授权等情形下，咨询师可突破保密的情形。</li><li><strong>双重关系</strong>——咨询师与当事人除专业关系之外还存在其他关系（社交、师生、商业、亲密关系等），可能损害客观性与造成剥削。</li><li><strong>转介</strong>——当问题超出咨询师胜任范围或存在利益冲突时，把当事人介绍给更合适的专业人员。</li><li><strong>伦理守则五原则</strong>——善行、责任、诚信、公正、尊重。</li><li><strong>跨理论模型/改变阶段</strong>——前意向期、意向期、准备期、行动期、维持期，咨询策略需与阶段匹配。</li><li><strong>结构化</strong>——咨询师向当事人说明咨询的性质、过程、设置与双方角色责任，为其提供可预期框架的过程。</li><li><strong>工作同盟（Bordin）</strong>——咨询双方对任务与目标的共识＋彼此的情感联结，三成分缺一不可。</li><li><strong>同盟破裂-修复</strong>——同盟出现紧张或断裂后被识别并修复的过程，是产生治疗性改变的关键契机。</li><li><strong>真诚一致</strong>——咨询师内在体验与外在表达一致、不戴专业面具的态度。</li><li><strong>无条件积极关注</strong>——对当事人作为人的全部经验予以接纳与关怀，不因其行为而附加条件。</li><li><strong>共情（同感性理解）</strong>——准确进入当事人的内在参照框架去理解其世界，并把这种理解传达给他。</li><li><strong>移情</strong>——当事人把过去对重要他人的情感与期待投射到咨询师身上的现象。</li><li><strong>反移情</strong>——咨询师对当事人产生的情感反应，需被觉察并作为理解当事人的信息来源。</li><li><strong>阻抗</strong>——阻碍咨询进程、使当事人回避探索与改变的一切力量。</li><li><strong>助长条件</strong>——罗杰斯提出的促进改变的三种关系条件：真诚一致、无条件积极关注、共情。</li><li><strong>咨询目标的正向表述</strong>——用"要做什么"而非"不要做什么"来表述目标，便于观察与执行。</li><li><strong>价值干预</strong>——在咨询中对当事人的价值观进行澄清、引导或必要挑战，以缓解其困扰。</li><li><strong>价值条件</strong>——罗杰斯概念：个体只有符合他人设定的条件才被接纳，是自我与经验不一致的根源。</li><li><strong>摄入性会谈</strong>——以收集当事人背景与问题信息为主要目的的初次或评估性会谈。</li><li><strong>情感反映</strong>——咨询师反馈当事人表达或隐含的情绪，是核心的倾听性技巧。</li><li><strong>释义（内容反映）</strong>——用自己的话概括当事人陈述的事实内容。</li><li><strong>面质/对峙</strong>——温和而具体地指出当事人言行、情感或陈述之间的矛盾。</li><li><strong>即时化</strong>——直接讨论咨询关系中"此时此地"正在发生的事。</li><li><strong>自我表露</strong>——咨询师适度分享自身相关经历或当下感受，以服务于当事人的需要。</li><li><strong>解释</strong>——从某一理论出发，对当事人问题的成因或维持机制作出说明。</li><li><strong>个案概念化</strong>——用理论框架对当事人问题的成因、维持机制与干预方向作出可检验的整体说明。</li><li><strong>功能分析（SORC）</strong>——分析行为的前因刺激 S、机体变量 O、行为反应 R、后果强化 C，是行为疗法的核心评估方法。</li><li><strong>领悟三层次</strong>——关联领悟、因果/模式领悟、机制领悟。</li><li><strong>复发预防</strong>——识别高危情境、区分失误与复发、制定应对计划，以维持改变效果。</li><li><strong>自由联想</strong>——精神分析的基本方法：让当事人不加拣选地说出脑中出现的一切。</li><li><strong>修通</strong>——反复解释与体验，使领悟真正内化并带来持久改变的过程。</li><li><strong>防御机制</strong>——自我为减轻焦虑而无意识采用的心理策略，如压抑、投射、合理化、升华。</li><li><strong>系统脱敏</strong>——沃尔普创立：放松训练＋焦虑等级表＋逐级想象或实际暴露，用于消除恐惧与焦虑。</li><li><strong>代币制</strong>——以象征性强化物累积换取实际奖励的行为矫正程序。</li><li><strong>ABC理论</strong>——艾利斯：诱发事件 A 通过信念 B 导致情绪行为后果 C；改变 B 才能改变 C。</li><li><strong>家庭边界</strong>——界定家庭成员参与彼此事务的规则，分清晰、僵硬与模糊三类；结构式家庭治疗的核心概念。</li></ol>
+<hr>
+<h2 class="part">三、简答 / 论述预测题（25题）</h2>
+<ol><li><strong>心理咨询与心理治疗的区别与联系。</strong></li></ol>
+<p>对象（正常人/轻中度困扰 vs 障碍患者）、目标（发展教育支持 vs 矫治）、时长、场所与从业者；联系——本质同为专业助人关系，均基于心理学理论与关系，界限模糊，技术上有大量重叠。</p>
+<ol><li><strong>简述心理咨询的共同要素（Frank）并说明其意义。</strong></li></ol>
+<p>四要素（关系、设置、理论解释、治疗程序）；意义——解释为何不同疗法疗效相当，提示临床训练应重视关系能力，技术必须嵌入关系之中。</p>
+<ol><li><strong>简述疗效因素的构成比例及其对实践的启示。</strong></li></ol>
+<p>兰伯特：共同因素40%、期望与安慰剂15%、技术15%、当事人与治疗外因素30%；启示——关系与当事人自身的资源最重要，技术不可偏废，应激发当事人期望、动员其生活资源。</p>
+<ol><li><strong>简述美国心理咨询兴起的三条历史线索。</strong></li></ol>
+<p>职业指导运动（帕森斯1908）、心理卫生运动（比尔斯1908）、心理测验运动；补充罗杰斯非指导式咨询的意义。</p>
+<ol><li><strong>简述中国传统文化中的心理治疗思想。</strong></li></ol>
+<p>《内经》情志相胜、祝由、整体观、气功禅修的觉察、民俗宣泄；本土化的必要性与局限。</p>
+<ol><li><strong>试述心理咨询的专业伦理原则与保密的例外。</strong></li></ol>
+<p>五原则（善行、责任、诚信、公正、尊重）；知情同意；保密例外的五种情形；操作要点（事先告知、最小披露、记录）。</p>
+<ol><li><strong>什么是双重关系？如何处理？</strong></li></ol>
+<p>定义与类型；性亲密绝对禁止；非性双重关系尽量避免，不可避免时设边界、记录、督导；举例（小城市、同行、学生）。</p>
+<ol><li><strong>简述当事人与咨询师各自影响疗效的变量。</strong></li></ol>
+<p>当事人——问题性质、动机期望、改变阶段、人格依恋、社会支持；咨询师——训练经验、态度人格（共情真诚关注）、觉察力与自我照顾、理论取向。</p>
+<ol><li><strong>简述咨询目标的类型与确立原则。</strong></li></ol>
+<p>终极/中间/直接；矫正/发展/预防；原则——具体、可测、可行、共同商定、分阶段、正向表述。</p>
+<ol><li><strong>试述咨询中的价值中立与价值干预。</strong></li></ol>
+<p>价值中立的含义与罗杰斯渊源；完全中立不可能（理论选择即含价值）；价值干预必要（困扰常源于非理性价值）；原则——觉察自身价值、澄清优先、尊重自决、对危害自身他人者明确干预。</p>
+<ol><li><strong>试述工作同盟的构成及其在咨询中的作用。</strong></li></ol>
+<p>鲍尔丁三成分（任务、目标、情感联结）；同盟是疗效最强的预测变量之一；破裂-修复的意义；建立同盟的方法（结构化、共情、目标共识）。</p>
+<ol><li><strong>试述罗杰斯的助长条件与六个充分必要条件。</strong></li></ol>
+<p>三条件；六条件（接触、不一致、一致、无条件关注、共情、被感知）；意义与批评。</p>
+<ol><li><strong>什么是共情？如何提升共情？</strong></li></ol>
+<p>定义；区分共情/同情/认同；层次；提升——倾听三层（内容-情感-意义）、情感反映练习、觉察自身反应、阅读与体验的积累。</p>
+<ol><li><strong>简述移情与反移情及其处理。</strong></li></ol>
+<p>定义与表现；移情的处理（识别、接纳、探索其人际意义、在同盟中工作）；反移情的处理（觉察、督导、个人体验、必要时转介）。</p>
+<ol><li><strong>简述阻抗的表现、来源与处理。</strong></li></ol>
+<p>表现（沉默、迟到、遗忘、理性化、讨好、质疑）；来源（改变恐惧、继发获益、羞耻、分离焦虑）；处理（正常化、探索意义、回到同盟与目标、放慢节奏）。</p>
+<ol><li><strong>什么是结构化？说明其内容和作用。</strong></li></ol>
+<p>定义；内容（时间频率费用地点保密例外双方责任）；作用（降焦虑、建同盟、明边界、提参与）。</p>
+<ol><li><strong>简述咨询历程的主要阶段与任务。</strong></li></ol>
+<p>初始（关系、结构化、评估、目标）—探索—行动—结束（评估、巩固复发预防、分离）。</p>
+<ol><li><strong>简述倾听性会谈技巧与影响性会谈技巧。</strong></li></ol>
+<p>倾听性：提问、鼓励、释义、情感反映、澄清、概述；影响性：解释、指导与信息、自我表露、面质、即时化、逻辑推论、角色扮演、作业。各举一例。</p>
+<ol><li><strong>简述领悟的层次及其与改变的关系。</strong></li></ol>
+<p>关联—因果/模式—机制；领悟是改变的必要条件而非充分条件，须与行动相接。</p>
+<ol><li><strong>什么是个案概念化？比较不同理论的概念化路径。</strong></li></ol>
+<p>定义与功能；精神分析（冲突与防御）、行为（SORC 功能分析）、认知（自动思维-中间信念-核心信念）、以人为中心（自我与经验不一致）、家庭（结构与边界）。</p>
+<ol><li><strong>试述精神分析疗法的基本理论与主要技术，并评价。</strong></li></ol>
+<p>见章节速记，按"人性观-病因观-目标-技术-评价"模板写。</p>
+<ol><li><strong>试述行为疗法的理论基础、治疗过程与主要技术。</strong></li></ol>
+<p>三大理论来源；核心假设"习得-可再学习"；过程（功能分析-目标行为-选择技术-实施-评估随访）；技术按经典/操作/社会学习三类列举。</p>
+<ol><li><strong>试述以人为中心疗法的人性观、核心概念与治疗方式。</strong></li></ol>
+<p>实现倾向、现象学、自我概念与经验不一致、价值条件、机能完善者；非指导；三条件；评价。</p>
+<ol><li><strong>试述理性情绪行为疗法的 ABC 理论与非理性信念特征。</strong></li></ol>
+<p>ABCDE；三大特征（绝对化要求、过分概括化、糟糕至极）；技术与评价。</p>
+<ol><li><strong>试述结构式家庭治疗的核心概念与干预策略。</strong></li></ol>
+<p>结构、子系统、边界（清晰/僵硬/模糊）、三角化、等级；纠缠与疏离；技术（加入、演出、重构、边界设定、制造强度、家庭图谱）；评价。</p>
+<hr>
+<h2 class="part">四、四大疗法对比表（背这张表，论述题直接套）</h2>
+<div class="tw"><table><thead><tr><th>维度</th><th>精神分析</th><th>行为疗法</th><th>以人为中心</th><th>理性情绪行为</th></tr></thead><tbody><tr><td>代表人物</td><td>弗洛伊德</td><td>巴甫洛夫/华生/斯金纳/沃尔普</td><td>罗杰斯</td><td>艾利斯</td></tr><tr><td>人性观</td><td>本能驱动、被潜意识冲突决定</td><td>中性的，行为由学习决定</td><td>积极、有实现倾向、可自我引导</td><td>理性可自主，但天生易生非理性信念</td></tr><tr><td>病因观</td><td>童年早期未解决的潜意识冲突＋防御失败</td><td>适应不良行为是习得的、被强化维持</td><td>价值条件使自我与经验不一致，经验被否认</td><td>非理性信念与内部自我言语</td></tr><tr><td>核心概念</td><td>潜意识、本我自我超我、防御、移情、固着</td><td>S-R、强化、功能分析 SORC</td><td>自我概念、无条件积极关注、共情</td><td>ABC、非理性信念、辩驳 D</td></tr><tr><td>治疗目标</td><td>潜意识意识化，扩展自我</td><td>消除不良行为、建立适应行为</td><td>恢复自我与经验一致，成为机能完善者</td><td>以理性信念替代非理性信念</td></tr><tr><td>咨询师角色</td><td>中立、匿名、解释者</td><td>教师/训练者、主动设计程序</td><td>陪伴者、非指导、反映者</td><td>教师与辩驳者，主动指导</td></tr><tr><td>主要技术</td><td>自由联想、梦的分析、移情与阻抗分析、解释、修通</td><td>系统脱敏、暴露、代币制、塑造、示范、放松、行为契约</td><td>倾听、情感反映、释义、真诚一致、无条件关注</td><td>辩论（逻辑/经验/实用）、REI、家庭作业、幽默、冒险练习</td></tr><tr><td>适用</td><td>神经症性困扰、人格与关系模式</td><td>恐惧、强迫、成瘾、儿童行为问题</td><td>发展性困扰、自我探索、关系议题</td><td>焦虑抑郁、愤怒、非理性信念困扰</td></tr><tr><td>主要局限</td><td>疗程长、科学性争议、泛性论</td><td>早期忽视认知情感、伦理争议</td><td>技术薄、对重症效果有限</td><td>对抗性强、重理性轻情绪、价值预设</td></tr></tbody></table></div>
+<p><strong>家庭治疗单独记</strong>：单位＝家庭系统；病在结构（边界、三角化、等级）；技术＝加入、演出、重构、边界设定；适应＝儿童青少年问题、进食障碍。</p>
+<hr>
+<h2 class="part">五、自测卷</h2>
+<details class="sec"><summary>自测卷（一）</summary><div class="body"><p><strong>一、名词解释（每题4分，共20分）</strong></p>
+<ol><li>共同要素　2. 工作同盟　3. 结构化　4. 系统脱敏　5. 价值条件</li></ol>
+<p><strong>二、简答题（每题10分，共40分）</strong></p>
+<ol><li>简述心理咨询与心理治疗的区别与联系。</li><li>简述保密的例外情形及处理要点。</li><li>简述倾听性技巧与影响性技巧各有哪些（各举三例）。</li><li>简述艾利斯 ABC 理论及非理性信念的三大特征。</li></ol>
+<p><strong>三、论述题（每题20分，共40分）</strong></p>
+<ol><li>试述咨询关系在心理咨询中的地位与作用，并结合罗杰斯的条件理论说明如何建立良好的咨询关系。</li><li>比较行为疗法与以人为中心疗法在人性观、病因观、咨询师角色与技术上的差异，并说明各自的适用范围。</li></ol></div></details>
+<details class="sec"><summary>自测卷（一）答案要点</summary><div class="body"><ul><li class="lv0"><strong>名词</strong>：①弗兰克提出的跨疗法共有的四种疗效成分（信任关系、设置、理论解释、治疗程序）。②鲍尔丁：任务共识＋目标共识＋情感联结。③向当事人说明咨询性质、过程、设置与双方角色责任的过程。④沃尔普：放松训练＋焦虑等级表＋逐级暴露，消除焦虑恐惧。⑤罗杰斯：个体只有符合他人设定的条件才被接纳，导致自我与经验不一致。</li><li class="lv0"><strong>简答1</strong>：对象（正常人/轻中度 vs 障碍患者）、目标（发展支持 vs 矫治）、时长、场所与训练背景；联系：同为专业助人关系、理论与技术重叠、界限模糊。</li><li class="lv0"><strong>简答2</strong>：自伤自杀危险、伤害他人危险、虐待儿童或受照料者、法律要求与司法程序、当事人书面授权；要点：在知情同意中预先说明、突破前尽量告知、只披露最少必要信息、记录决策过程。</li><li class="lv0"><strong>简答3</strong>：倾听性——开放式提问、鼓励、释义、情感反映、澄清、概述（三例即可）；影响性——解释、指导与提供信息、自我表露、面质、即时化、角色扮演、作业（三例即可）。</li><li class="lv0"><strong>简答4</strong>：A 诱发事件→B 信念→C 情绪行为后果，B 是主因；D 辩驳→E 效果→F 新感受；三大特征：绝对化要求（必须/应该）、过分概括化（以偏概全）、糟糕至极（灾难化）。</li><li class="lv0"><strong>论述1</strong>：地位——关系是疗效最强预测因素之一，共同要素占比最大，先于技术、承载技术。作用：提供安全感与信任、促成自我探索与暴露、本身具有矫正性情感体验、是处理移情与阻抗的场域。罗杰斯条件——真诚一致、无条件积极关注、共情性理解（＋六个充分必要条件）。具体做法：结构化建立可预期框架；积极倾听与情感反映；尊重与不评判；目标与任务达成共识；识别并修复同盟破裂；觉察并管理反移情；适度的自我表露与即时化。</li><li class="lv0"><strong>论述2</strong>：人性观——行为：中性、由学习塑造；以人为中心：积极、实现倾向。病因观——行为：不良行为习得并被强化维持；以人为中心：价值条件导致自我与经验不一致。角色——行为：主动的教师/程序设计者；以人为中心：非指导的陪伴者与反映者。技术——行为：功能分析、系统脱敏、暴露、代币制、塑造、示范与放松训练；以人为中心：倾听、情感反映、释义、共情与真诚。适用——行为：恐惧症、强迫、成瘾、儿童行为问题等具体可测量的行为；以人为中心：发展性困扰、自我认同、关系议题及作为所有疗法的关系基础。互补：行为提供改变的程序，人本提供改变的条件。</li></ul></div></details>
+<details class="sec"><summary>自测卷（二）</summary><div class="body"><p><strong>一、辨析题（先判断正误并说明理由，每题8分，共24分）</strong></p>
+<ol><li>负强化就是惩罚。</li><li>共情就是认同当事人的观点。</li><li>心理咨询中咨询师应始终保持完全的价值中立。</li></ol>
+<p><strong>二、简答题（每题12分，共36分）</strong></p>
+<ol><li>简述精神分析疗法的主要技术与评价。</li><li>简述结构式家庭治疗的核心概念（至少四个）与干预技术（至少三个）。</li><li>简述个案概念化的功能及行为取向的概念化路径。</li></ol>
+<p><strong>三、案例分析题（20分）</strong> 案例：大一女生小陈，因"不敢在课堂上发言、回避小组活动"前来咨询。她说："我从小到大都很内向，小学时被老师当众批评过一次，从那以后就不敢开口。我觉得大家都在盯着我，只要我一说话他们就会发现我很蠢。我必须让每个人都对我满意，否则就说明我这个人很失败。"她已经连续三次迟到，会谈中常低头玩手指，说"其实也没什么好转，可能我就是这种人吧"。 要求： （1）分别用行为取向和认知取向（REBT）对小陈的问题进行个案概念化； （2）指出材料中体现的咨询现象（至少两种，如阻抗、非理性信念等）并说明如何处理； （3）拟定两条咨询目标（符合目标确立原则）。</p>
+<p><strong>四、论述题（20分）</strong> 试述专业伦理对心理咨询的重要性，并结合知情同意、保密与保密例外、双重关系三个方面说明如何在实务中落实。</p></div></details>
+<details class="sec"><summary>自测卷（二）答案要点</summary><div class="body"><ul><li class="lv0"><strong>辨析1</strong>：错误。负强化是移除厌恶刺激使行为频率<strong>增加</strong>，惩罚是给予厌恶刺激或移除愉快刺激使行为频率<strong>降低</strong>；二者目的与机制相反。</li><li class="lv0"><strong>辨析2</strong>：错误。共情是准确理解并传达当事人的内在感受与意义（"我理解你"），不等于同意其观点（认同），也不等于怜悯（同情）；共情要求进入当事人的参照框架，同时保持咨询师自己的立场。</li><li class="lv0"><strong>辨析3</strong>：错误。态度上的接纳与不评判应坚持，但内容上的完全中立不可能也不必要：选择理论与干预目标本身即含价值判断；当事人的困扰常直接源于非理性价值。正确做法是价值觉察＋价值澄清＋尊重自决，仅在危害自己或他人时明确干预。</li><li class="lv0"><strong>简答1</strong>：技术——自由联想、梦的分析、移情分析、阻抗分析、解释、修通；评价——贡献（潜意识、早期经验、防御与移情、开创谈话治疗、影响后续所有取向）＋局限（疗程长、可证伪性差、泛性论、对重症与危机有限）。</li><li class="lv0"><strong>简答2</strong>：概念——家庭结构、子系统、边界（清晰/僵硬/模糊）、等级与权力、联盟与三角化、纠缠与疏离、症状承载者；技术——加入与顺应、演出、重构、边界设定、制造强度、家庭图谱、家庭作业。</li><li class="lv0"><strong>简答3</strong>：功能——组织信息、理解当事人、指导干预、预测困难（阻抗与同盟破裂）、便于督导沟通；行为取向路径——功能分析 SORC/ABC：明确前因 S（被注视、课堂情境）、机体变量 O（内向气质、既往被批评经历）、目标行为 R（回避发言、低头、迟到）、后果 C（焦虑暂时下降→负强化维持回避）；据此制定暴露与技能训练方案。</li><li class="lv0"><strong>案例分析</strong>：</li></ul>
+<p>（1）<strong>行为取向概念化</strong>：S＝课堂发言/小组情境与被注视；O＝既往被当众批评的创伤性体验、内向气质；R＝回避发言、低头玩手指、迟到；C＝回避使焦虑迅速下降（<strong>负强化</strong>），回避被维持并泛化，社交技能缺乏练习机会；维持机制＝负强化＋回避导致的技能剥夺。<strong>REBT 概念化</strong>：A＝课堂发言与被评价情境；B＝非理性信念——"我必须让每个人都对我满意"（<strong>绝对化要求</strong>）、"我一说话就会暴露我很蠢"（<strong>糟糕至极/灾难化</strong>）、"我就是这种人"（<strong>过分概括化</strong>）；C＝强烈焦虑、回避行为、自我贬低。干预＝识别并辩驳 B，建立替代信念（"我希望被喜欢，但不需要所有人都满意；说错话是尴尬而非灾难"）。 （2）<strong>咨询现象</strong>：①<strong>阻抗</strong>——连续三次迟到、低头玩手指、"其实也没什么好转"；处理：正常化、探索其意义（是否对改变有恐惧或担心被评价）、回到同盟与目标共识、放慢节奏，不与阻抗硬碰。②<strong>负强化维持的回避</strong>（行为机制）。③<strong>非理性信念</strong>（三条）。④可提及<strong>同盟尚未稳固</strong>，需先加强关系与结构化（迟到本身也可作为议题处理）。 （3）<strong>咨询目标</strong>（正向、具体、可测、共同商定、分阶段）：①在未来四周内，每周在课堂或小组中主动发言至少1次，并用0-10分自评焦虑强度，目标从8分降到5分以下。②识别并记录"必须被所有人喜欢"等自动思维，学会用三问（证据？逻辑？有用吗？）辩驳，每周完成3次思维记录表。③（可选）开展逐级暴露：想象发言→小组内发言→课堂发言。</p>
+<ul><li class="lv0"><strong>论述</strong>：重要性——保护当事人权益、维持专业公信力、为复杂情境提供决策依据、划定专业边界（与伦理违规的法律风险）。落实：①<strong>知情同意</strong>：在首次会谈说明咨询性质、过程、可能的不适、费用与时间、保密与例外、双方责任，用通俗语言并给当事人提问机会，未成年人兼顾法定代理人。②<strong>保密与例外</strong>：日常严格保密，案例讨论与督导需去标识化；五类例外（自伤自杀、伤人、虐待、法律要求、授权）；突破前告知、最小披露、记录并寻求督导。③<strong>双重关系</strong>：性亲密关系绝对禁止；非性双重关系（师生、朋友、商业、贵重礼品）尽量避免，不可避免时设清晰边界、说明风险、书面记录并接受督导；必要时转介。补充：持续的专业学习与督导、自我照顾是伦理落实的基础。</li></ul>
+<hr></div></details>
+<h2 class="part">六、考前3小时急救清单</h2>
+<ul><li class="lv0">Frank 四共同要素：信任关系·设置·理论解释·治疗程序。</li><li class="lv0">Lambert 比例：共同40% · 期望安慰剂15% · 技术15% · 当事人30%。</li><li class="lv0">咨询 vs 治疗：对象轻/重、目标发展/矫治、时长短/长、本质同为专业助人关系。</li><li class="lv0">伦理五原则：善行·责任·诚信·公正·尊重。</li><li class="lv0">保密五例外：自伤·伤人·虐待·法律·授权。</li><li class="lv0">同盟三成分（Bordin）：任务·目标·情感联结；破裂-修复。</li><li class="lv0">罗杰斯三条件：真诚·无条件积极关注·共情；六充分必要条件。</li><li class="lv0">共情≠同情≠认同；SOLER 姿态。</li><li class="lv0">结构化内容：时间频率·地点·费用·保密例外·双方责任。</li><li class="lv0">倾听性：提问·鼓励·释义·情感反映·澄清·概述。影响性：解释·指导·自我表露·面质·即时化·角色扮演·作业。</li><li class="lv0">阻抗：表现（沉默/迟到/遗忘/理性化/讨好）、来源（恐惧·继发获益·羞耻·分离）、处理（正常化·探索·回同盟·放慢）。</li><li class="lv0">领悟三层次：关联→因果/模式→机制。</li><li class="lv0">精神分析：潜意识·本我自我超我·防御·移情·自由联想·修通。</li><li class="lv0">行为：SORC 功能分析·系统脱敏（放松+等级+暴露）·代币制·塑造·示范·ERP。</li><li class="lv0">人本：实现倾向·价值条件·自我与经验不一致·机能完善者·非指导。</li><li class="lv0">REBT：A-B-C-D-E-F；非理性三特征＝绝对化·概括化·糟糕至极。</li><li class="lv0">家庭：结构·子系统·边界（清晰/僵硬/模糊）·三角化·加入·演出·重构·边界设定。</li><li class="lv0">所有"评价题"万能结尾：贡献（提出了XX，推动了XX）＋局限（适用范围/科学性/伦理/忽视XX）。</li></ul></section><div class="empty" id="empty" style="display:none">没有匹配的内容</div></main>
+<footer>教材：张厚粲、许燕《心理学导论》｜江光荣《心理咨询的理论与实务》 · 预测题非真题，以本校授课范围为准
+  ｜ <a href="intro.pdf">导论 PDF</a> · <a href="counseling.pdf">咨询 PDF</a></footer>
+<script>
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(function(t,i){t.onclick=function(){
+  tabs.forEach(function(x){x.classList.remove('active')});
+  panels.forEach(function(x){x.classList.remove('active')});
+  t.classList.add('active');panels[i].classList.add('active');
+  window.scrollTo(0,0);};});
+
+var expanded=false;
+document.getElementById('tog').onclick=function(){
+  expanded=!expanded;
+  document.querySelectorAll('.panel.active details').forEach(function(d){d.open=expanded});
+  this.textContent=expanded?'全部折叠':'全部展开';};
+
+document.getElementById('prt').onclick=function(){
+  document.querySelectorAll('details').forEach(function(d){d.open=true});
+  window.print();};
+
+var q=document.getElementById('q'),empty=document.getElementById('empty');
+function clearMarks(){
+  document.querySelectorAll('mark').forEach(function(m){
+    var p=m.parentNode;p.replaceChild(document.createTextNode(m.textContent),m);p.normalize();});}
+q.oninput=function(){
+  clearMarks();
+  var kw=q.value.trim();
+  document.querySelectorAll('details.sec').forEach(function(d){d.classList.remove('hit');d.style.display='';});
+  if(!kw){empty.style.display='none';return;}
+  var n=0;
+  document.querySelectorAll('.panel.active details.sec').forEach(function(d){
+    var txt=d.textContent;
+    if(txt.indexOf(kw)>-1){
+      n++;d.open=true;
+      d.querySelectorAll('li,p,td,th,summary').forEach(function(el){
+        if(el.children.length===0&&el.textContent.indexOf(kw)>-1){
+          el.innerHTML=el.innerHTML.split(kw).join('<mark>'+kw+'</mark>');}});
+    }else{d.style.display='none';}});
+  empty.style.display=n?'none':'block';
+  empty.textContent=n?'':'没有匹配的内容';};
+</script>
+</body>
+</html>
